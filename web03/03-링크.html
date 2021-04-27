@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My Web Page</title>
+    <style type="text/css">
+    #blank {
+        height: 1000px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1>링크의 기본 사용 방법</h1>
+    <ul id="menu">
+        <li><a href="02-mark.html">현재 사이트의 특정 파일로 링크</a></li>
+        <li><a href="http://www.itpaper.co.kr" target="_blank">다른 사이트로 링크(새창)</a></li>
+    </ul>
+    <hr />
+    <div id="blank">빈공간</div>
+    <hr />
+    <h1>현재 페이지에서의 링크 이동</h1>
+    <ul>
+        <li><a href="#">현재 페이지의 맨 위로 이동</a></li>
+        <li><a href="#menu">현재 페이지의 특정 위치로 이동</a></li>
+    </ul>
+</body>
+
+</html>

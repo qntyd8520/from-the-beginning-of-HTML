@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form>
+        <fieldset>
+            <legend>이동통신사 선택하기</legend>
+            <div>
+                <!-- 드롭다운(싱글타입) -->
+                <label for="telecom">이동통신사 선택</label>
+                <select name="telecom" id="telecom">
+                    <option>----- 선택하세요 -----</option>
+                    <option value="SKT">SKTelecom</option>
+                    <option value="KT">KT</option>
+                    <option value="U+">LG U+</option>
+                </select>
+            </div>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>스마트폰 운영체제 선택하기</legend>
+            <div>
+                <!-- 드롭다운(멀티타입) -->
+                <label for="smartphone">스마트폰 운영체제</label>
+                <select name="smartphone" id=smartphone multiple>
+                    <option value="android">안드로이드</option>
+                    <option value="iOS">iOS</option>
+                    <option value="window">Window</option>
+                </select>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

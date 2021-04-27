@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form name="from1">
+        <h1>회원가입</h1>
+        <fieldset>
+            <legend> 부가 정보 </legend>
+            <div>
+                <label for="user_mail">이메일 : </label>
+                <input type="email" name="user_mail" id="user_mail" required="required" title="ex) student@gmail.com" />
+            </div>
+            <div>
+                <label for="user_homepage">홈페이지 : </label>
+                <input type="url" name="user_homepage" id="user_homepage" />
+            </div>
+            <div>
+                <label for="user_age">나이 : </label>
+                <input type="number" name="user_age" id="user_age" min="19" max="100" step="1" />
+            </div>
+            <div>
+                <label for="user_phone">연락처 : </label>
+                <input type="tel" name="user_phone" id="user_phone" />
+            </div>
+            <div>
+                <label for="point">목표성취도(%) : </label>
+                <input type="range" name="point" id="point" value="50" min="0" max="100" />
+            </div>
+            <div>
+                <label for="birthdate">생년월일 : </label>
+                <input type="date" name="birthdate" id="birthdate" value="1996-07-17" />
+            </div>
+            <div>
+                <label for="worktime">출근시간 : </label>
+                <input type="time" name="worktime" id="worktime" value="09:00" />
+            </div>
+            <div>
+                <label for="friend">추천인 아이디 : </label>
+                <input type="search" name="friend" id="friend" />
+            </div>
+            <div>
+                <button type="submit" formaction="action1.html" formmethod="get" formtarget="_blank">14세 이상 회원가입</button>
+                <button type="submit" formaction="action2.html" formmethod="post" formtarget="_self">14세 미만 회원가입</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
