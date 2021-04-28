@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    p.box {
+        background-color: #6bb2ff;
+        height: 100px;
+        width: 80%;
+        padding: 10px;
+    }
+
+    .corner1 {
+        border-radius: 20px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .corner2 {
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .corner3 {
+        border-radius: 20px 0 20px 0;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5),
+            inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <section>
+        <p class="box corner1">박스1</p>
+        <p class="box corner2">박스2</p>
+        <p class="box corner3">박스3</p>
+    </section>
+</body>
+
+</html>
