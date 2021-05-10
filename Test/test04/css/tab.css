@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/** 탭영역 > 버튼셋
+-----------------------------------------------------**/
+#tab ul {
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+    background: url(../img/bg_tab.gif) repeat-x;
+}
+
+/** 탭영역 > 버튼셋 > 개별항목
+-----------------------------------------------------**/
+#tab ul li {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    color: #000000;
+    float: left;
+}
+
+/** 탭영역 > Float 해제
+-----------------------------------------------------**/
+div#tab>ul:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+/** 탭영역 > 버튼셋 > 개별항목 > 링크
+-----------------------------------------------------**/
+div#tab>ul>li>a {
+    display: block;
+    width: auto;
+    height: 23px;
+    padding-top: 17px;
+    color: #fff;
+}
+
+/** 탭영역 > 버튼셋 > 개별항목 > 활성화 메뉴
+-----------------------------------------------------**/
+div#tab>ul>li.active {
+    background: url(../img/bg_tab_left.gif) left 10px no-repeat;
+}
+
+/** 탭영역 > 버튼셋 > 개별항목 > 황성화 메뉴 > 링크
+-----------------------------------------------------**/
+div#tab>ul>li.active>a {
+    background: url(../img/bg_tab_right.gif) right 10px no-repeat;
+    color: #000;
+}
