@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/** 공통속성
+---------------------------------------------**/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/** 전체박스 : 전체 레이아웃의 폭, 정렬을 제어하기 위한 박스
+---------------------------------------------**/
+#container {
+    width: 800px;
+    margin:
+        auto;
+    border: 1px solid #000000;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+/** 상단 : 폭 = 부모값, 높이 = 고정---------------------------------------------**/
+#header {
+    background: #cccccc;
+    width: auto;
+    position: relative;
+}
+
+#header .title {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-style: bold;
+    padding-bottom: 10px;
+}
+
+
+#header li {
+    display: inline-block;
+    width: 19.95%;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    float: left;
+}
+
+#header li a {
+    display: block;
+    width: auto;
+    height: 70%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    margin: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px dotted black;
+    background-color: #cccccc;
+}
+
+#header li:first-child {
+    border-left: 1px solid black;
+    display: inline;
+}
+
+#header li:last-child {
+    border-right: 1px solid black;
+    display: inline-block;
+}
+
+#header li a:hover {
+    background-color: #ffcc00
+}
+
+/** 내용 : 폭 = 부모값, 높이 = 가변---------------------------------------------**/
+#content {
+    width: auto;
+    /** 페이지의 최소 높이가 브라우저의 높이를 가득 채우도록 처리 **/
+    min-height: 300px;
+    /** IE하위 버전 호환성 확보 **/
+    height: auto !important;
+    height: 300px;
+}
+
+/** 내용 > 본문영역
+-----------------------------------------**/
+#body {
+    width: 640px;
+    float: left;
+    min-height: 300px;
+}
+
+/** 내용 > 사이드 바
+-----------------------------------------**/
+#sidebar {
+    width: 160px;
+    float: left;
+    background-color: #99ffcc;
+    padding-bottom: 10px;
+}
+
+#sidebar fieldset {
+    border: none;
+}
+
+#sidebar div {
+    padding: 5px;
+}
+
+
+#sidebar legend {
+    display: none;
+}
+
+#sidebar fieldset {
+    text-align: center;
+}
+
+#sidebar label {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px black;
+    margin-right: 65%;
+}
+
+
+
+#sidebar button {
+    margin: 5% auto;
+    padding: 5px;
+
+}
+
+/** Float 속성 해제
+-----------------------------------------**/
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+    float: none;
+}
+
+/** 하단 : 폭 = 부모값, 높이 = 고정---------------------------------------------**/
+#footer {
+    background-color: #cccccc;
+    width: auto;
+    height: 80px;
+    border-top: 1px solid #000000;
+}
+
+#footer address {
+    width: 95%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-style: normal;
+}
+
+/* 모든 태그에 적용될 공통 속성
+ *----------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-size: 12px;
+}
+
+/* 모든 링크의 밑줄 제거
+ *----------------------------------------*/
+a {
+    text-decoration: none;
+}
+
+/* 모든 목록정의 초기화. -여백은 6,7라인에서 제거했으므로 생략
+ *----------------------------------------*/
+ul,
+ol {
+    list-style: none;
+}
+
+/* 갤러리 영역 박스
+ *----------------------------------------*/
+#gallery {
+    width: 640px;
+    margin: auto;
+}
+
+/* 한 줄에 4개씩, 가로 배치
+ *----------------------------------------*/
+#gallery li {
+    width: 25%;
+    float: left;
+}
+
+/* 링크의 영역 확장 (공식)
+ * -크기와 여백을 주기 위하여 block으로 설정 후, 가로 가득
+ *----------------------------------------*/
+#gallery li a {
+    display: block;
+    width: auto;
+    padding: 10px;
+}
+
+/* 링크 안의 span을 block으로 처리
+ *----------------------------------------*/
+#gallery li a span {
+    display: block;
+    width: auto;
+}
+
+/* 이미지는 가득 채움
+ *----------------------------------------*/
+#gallery .thumb img {
+    width: 100%;
+}
+
+/* 텍스트 영역 처리
+ *----------------------------------------*/
+#gallery .text {
+    width: 95%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/* 게시물의 마우스 오버
+ *----------------------------------------*/
+#gallery li a:hover {
+    background-color: #eee
+}
