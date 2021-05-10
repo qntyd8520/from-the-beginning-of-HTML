@@ -1,0 +1,74 @@
+		<ul id="gallery">
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-01.jpg" alt="이미지1" /></span>
+					<span class="text">바다여행에서의 피부관리 노하우</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-02.jpg" alt="이미지2" /></span>
+					<span class="text">서울 시내 봄철 꽃 나들이 10선</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-03.jpg" alt="이미지3" /></span>
+					<span class="text">휴식을 위한 여행</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-04.jpg" alt="이미지4" /></span>
+					<span class="text">여행을 떠나기 전 체크사항</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-05.jpg" alt="이미지5" /></span>
+					<span class="text">친환경이 대세다! 자전거로 떠나는 여행</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-06.jpg" alt="이미지6" /></span>
+					<span class="text">야경이 아름다운 곳에서</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-07.jpg" alt="이미지7" /></span>
+					<span class="text">스마트한 결혼준비 2탄</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-08.jpg" alt="이미지8" /></span>
+					<span class="text">권태기가 올 줄은...</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-09.jpg" alt="이미지9" /></span>
+					<span class="text">특별한 날, 완벽준비 가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-10.jpg" alt="이미지10" /></span>
+					<span class="text">추억의 사진 복원</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-11.jpg" alt="이미지11" /></span>
+					<span class="text">일이냐, 사랑이냐. 그것이 문제로다.</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="thumb"><img src="img/thumb-12.jpg" alt="이미지12" /></span>
+					<span class="text">흡연에 관한 서로의 진실</span>
+				</a>
+			</li>
+		</ul>

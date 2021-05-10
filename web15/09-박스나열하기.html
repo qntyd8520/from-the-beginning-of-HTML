@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /* 전체 박스의 크기 지정과 중앙 배치 */
+    #container {
+        width: 800px;
+        border: 5px dotted #cccccc;
+        padding: 10px;
+        margin: auto;
+    }
+
+    /** 모든 박스의 크기 일괄 지정 **/
+    #container div {
+        width: 200px;
+        height: 200px;
+        float: left;
+    }
+
+    /** 각 박스에 대한 배경 색상 지정 **/
+    div#box1 {
+        background-color: #ff00ff;
+    }
+
+    div#box2 {
+        background-color: #0000ff;
+    }
+
+    div#box3 {
+        background-color: #00ff00;
+    }
+
+    div#box4 {
+        background-color: #ff6600;
+    }
+
+    div#box5 {
+        background-color: #ffff00;
+    }
+
+    /** float 마감제 **/
+    .clear:after {
+        content: "";
+        display: block;
+        float: none;
+        clear: both;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="container" class="clear">
+        <div id="box1">박스1</div>
+        <div id="box2">박스2</div>
+        <div id="box3">박스3</div>
+        <div id="box4">박스4</div>
+        <div id="box5">박스5</div>
+    </div>
+</body>
+
+</html>

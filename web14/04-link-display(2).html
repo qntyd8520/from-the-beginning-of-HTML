@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .link {
+        /** 글자 크기 16px 굴림 **/
+        font: 16px/40px "굴림";
+        /** 상하 여백 10, 좌우 여백 15px **/
+        padding: 10 15px;
+        /** 글자 색상 **/
+        color: #222222;
+        /** 링크의 밑줄 제거 **/
+        text-decoration: none;
+        /** 블럭요소처럼 동작지정 **/
+        display: block;
+        /** 크기 지정 **/
+        width: auto;
+        height: auto;
+        /** 아래 테두리 설정 **/
+        border-bottom: 1px dotted #cccccc;
+    }
+
+    /** :first-child --> 여러개의 요소중에서 첫 번째 요소 **/
+    /** :last-child --> 여러개의 요소중에서 마지막 요소 **/
+    .link:first-child {
+        border-top: 1px dotted #cccccc;
+    }
+
+    /** 마우스 오버시 배경색상 변경 **/
+    .link:hover {
+        background-color: #ffff00;
+    }
+
+    /** 링크 안의 <span>태그를 block-level요소로 변경하고 발줄임 처리 추가 **/
+    .link span {
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /** 제목부분 강조처리 **/
+    .link .subject {
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+
+    /** 내용부분 글자 크기 **/
+    .link .desc {
+        font-size: 12px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 링크는 HTML 분류상 Inline-level 요소이기 때문에, block-level을 포함할 수 없다. 즉, 링크 안에서 여러개의 문단을 구성하기 위해서는 <span>만 사용할 수 있다.
+   <span>을 문단처럼 적용하기 위하여, display 속성을 block로 부여한다. -->
+    <a href="#" class="link">
+        <span class="subject">HTML</span>
+        <span class="desc">웹 페이지를 제작하기 위한 뼈대를 구성하는 언어</span>
+    </a>
+    <a href="#" class="link">
+        <span class="subject">CSS</span>
+        <span class="desc">HTML로 구성된 뼈대에 옷을 입히는 언어</span>
+    </a>
+    <a href="#" class="link">
+        <span class="subject">JavaScript</span>
+        <span class="desc">동적인 기능을 추가하는 언어</span>
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** float의 특성 (2)
+        * - 두 개의 박스가 서로 다른 값을 갖는 경우, 박스가 양쪽에 배치된다.
+        * - 두 박스의 넓이 합이 부모를 가득 채우면,
+        * 한줄을 양분하는 효과를 얻는다.
+        */
+    div#box1 {
+        width: 150px;
+        height: 200px;
+        background-color: #ff00ff;
+        float: left;
+    }
+
+    div#box2 {
+        width: 150px;
+        height: 200px;
+        background-color: #ff6600;
+        float: right;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <p>웹 표준은 월드 와이드 웹의 측면을 서술하고 정의하는
+        공식 표준이나 다른 기술 규격을 가리키는 일반적인 용어이다.
+        최근에 이 용어는 웹 사이트를 작성하는 데 중요도가 높아지고 있으며
+        웹 디자인, 개발과 관계가 있다.</p>
+    <p>수많은 상호 의존성이 있는 표준들과 규격들 가운데 일부는
+        단지 월드 와이드 웹으로만 끝나는 것이 아니라,
+        인터넷의 관리 측면이기도 하며 이러한 표준들은 직간접적으로
+        웹 사이트, 웹 서비스 개발과 관리에 영향을 주고 있다.</p>
+    <p>이러한 것들 모두 "웹 표준"이라고 부르지만 웹 표준으로 이동하는
+        것을 찬성하는 사람들은 사용성과 접근성에 직접 영향을 미치는 더
+        높은 수준의 표준에 초점을 두는 경향이 있다.</p>
+    <p> (출처: 위키백과) </p>
+</body>
+
+</html>

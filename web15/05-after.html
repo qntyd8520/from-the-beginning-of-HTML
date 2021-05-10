@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    div.parent {
+        width: 250px;
+        border: 5px solid #f00;
+        background: #ffff00;
+        margin: auto;
+    }
+
+    div.child {
+        width: 200px;
+        height: 100px;
+        border: 5px solid #00f;
+        background: #f60;
+        margin: auto;
+    }
+
+    /**
+      * [가상클래스 after, before]
+      * 특정 요소의 시작태그의 직전과 종료태그의 직후에 가상의
+      * inline-level요소를 생성한다.
+     **/
+
+    /** 시작태그 직후 **/
+    .parent:before {
+        content: 'parent의 before';
+        display: block;
+        color: red;
+    }
+
+    /** 종료태그 직전 **/
+    .parent:after {
+        content: "parent의 after";
+        display: block;
+        color: red;
+    }
+
+    /** 시작태그 직후 **/
+    .child:before {
+        content: "chlid의 before";
+        display: block;
+        color: green;
+    }
+
+    /** 종료태그 직전 **/
+    .child:after {
+        content: "child의 after";
+        display: block;
+        color: green;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div class="parent">
+        <!-- .parent의 before -->
+        <div class="child">
+            <!-- .child의 before -->
+            박스1
+            <!-- .chlid의 after -->
+        </div>
+        <!-- .parent의 after -->
+    </div>
+</body>
+
+</html>

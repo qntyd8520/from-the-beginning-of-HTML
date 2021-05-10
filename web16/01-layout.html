@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 공통속성
+---------------------------------------------**/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    /** 전체박스 : 전체 레이아웃의 폭, 정렬을 제어하기 위한 박스
+---------------------------------------------**/
+    #container {
+        width: 800px;
+        margin: auto;
+    }
+
+    /** 상단 : 폭 = 부모값, 높이 = 고정---------------------------------------------**/
+    #header {
+        background-color: #ff00ff;
+        width: auto;
+        height: 100px;
+    }
+
+    /** 내용 : 폭 = 부모값, 높이 = 가변---------------------------------------------**/
+    #content {
+        background-color: #00ff00;
+        width: auto;
+        /** 페이지의 최소 높이가 브라우저의 높이를 가득 채우도록 처리 **/
+        min-height: 300px;
+        /** IE하위 버전 호환성 확보 **/
+        height: auto !important;
+        height: 300px;
+    }
+
+    /** 내용 > 본문영역
+-----------------------------------------**/
+    #body {
+        width: 640px;
+        background-color: #ffff00;
+        float: left;
+        min-height: 300px;
+    }
+
+    /** 내용 > 사이드 바
+-----------------------------------------**/
+    #sidebar {
+        width: 160px;
+        background-color: #0000ff;
+        float: left;
+        min-height: 300px;
+    }
+
+    /** Float 속성 해제
+-----------------------------------------**/
+    .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+        float: none;
+    }
+
+    /** 하단 : 폭 = 부모값, 높이 = 고정
+---------------------------------------------**/
+    #footer {
+        background-color: #ff6600;
+        width: auto;
+        height: 80px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="container">
+        <div id="header">
+            상단영역 </div>
+        <div id="content" class="clear">
+            <div id="body">
+                본문 영역
+            </div>
+            <div id="sidebar">
+                사이드 바
+            </div>
+        </div>
+        <div id="footer">
+            하단영역
+        </div>
+    </div>
+</body>
+
+</html>
