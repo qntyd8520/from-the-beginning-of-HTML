@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 100px;
+        height: 100px;
+    }
+
+    #box1 {
+        background-color: #ff0000;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        /** 요소간의 겹치는 순서를 결정한다.
+         *  값의 크기만을 비교할 뿐 , 순서대로 주어질 필요는 없다. **/
+        z-index: 1;
+    }
+
+    #box2 {
+        background-color: #00ff00;
+        /** 원래 자신의 위치를 기준으로 이동 */
+        /** 주변 요소들은 이 요소가 이동했다는 사실을 모른다. */
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+
+    #box3 {
+        background-color: #0000ff;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+</body>
+
+</html>

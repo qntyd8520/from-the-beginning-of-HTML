@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /***각 컨텐츠 박스 **/
+    .photo {
+        margin: 35px auto;
+        width: 250px;
+        padding: 7px 7px 15px 7px;
+        border: 1px solid #bfbfbf;
+        background-color: #fff;
+        box-shadow: 2px 2px 5px rgba(135, 139, 144, 0.7);
+    }
+
+    /** 컨텐츠 박스 > 텍스트 **/
+    .photo>p {
+        padding-top: 7px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        color: #060;
+    }
+
+    /** 컨텐츠 박스 > 이미지 **/
+    .photo>img {
+        width: 100%;
+    }
+
+    /** 회전 **/
+    .transform1 {
+        -webkit-transform: rotate(-5deg);
+    }
+
+    /** 회전 + 스케일 **/
+    .transform2 {
+        -webkit-transform: rotate(-5deg) scale(1.2, 1.2);
+    }
+
+    /** 기울임 **/
+    .transform3 {
+        -webkit-transform: skew(-5deg, 2deg);
+    }
+
+    /** 위치+회전기울임 **/
+    .transform4 {
+        -webkit-transform: translate(100px, -550px) rotate(15deg) scale(0.7, 0.7);
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div class="photo transform1">
+        <img src="img/spring.jpg">
+        <p>봄에는 모든 것들이 깨어난다.</p>
+    </div>
+    <div class="photo transform2">
+        <img src="img/summer.jpg">
+        <p>여름에는 모든것이 힘차다.</p>
+    </div>
+    <div class="photo transform3">
+        <img src="img/autumn.jpg">
+        <p>가을에는 감사하자.</p>
+    </div>
+    <div class="photo transform4">
+        <img src="img/winter.jpg">
+        <p>겨울은 모든 일들을 덮는다.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 기본 초기화 처리 **/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        background-color: #eee;
+    }
+
+    /** 1차메뉴 구성 **/
+    #menu>h2 {
+        padding: 0;
+        margin: 0;
+        height: 45px;
+        background: url(img/btn_a.png) right 0 no-repeat,
+            url(img/acc_menu_bg.png) repeat-x;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /** 1차메뉴 > 링크 **/
+    #menu>h2>a {
+        display: block;
+        width: auto;
+        padding: 13px 12px 0 12px;
+        height: 45px;
+        font-size: 16px;
+        color: #555;
+        text-decoration: none;
+    }
+
+    /** 2차 메뉴 배경 및 테두리 **/
+    #menu>ul>li {
+        background: #e5e5e5;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /** 2차메뉴 링크 **/
+    #menu>ul>li>a {
+        display: block;
+        width: auto;
+        padding: 7px 12px 3px 30px;
+        height: 27px;
+        font-size: 12px;
+        line-height: 27px;
+        color: #555;
+        text-decoration: none;
+    }
+
+    /** 숨김, 해제 처리 **/
+    #menu>ul {
+        /** 숨김처리 **/
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+
+    #menu>ul:target {
+        /** 숨김처리 해제**/
+        height: 114px;
+        opacity: 1;
+        visibility: visible;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <nav id="menu">
+        <h2><a href="#sub1">남성의류</a></h2>
+        <ul id="sub1">
+            <li><a href="#">남성 정장</a></li>
+            <li><a href="#">남성 캐쥬얼</a></li>
+            <li><a href="#">남성 잡화</a></li>
+        </ul>
+        <h2><a href="#sub2">여성의류</a></h2>
+        <ul id="sub2">
+            <li><a href="#">여성 정장</a></li>
+            <li><a href="#">여성 캐쥬얼</a></li>
+            <li><a href="#">여성 잡화</a></li>
+        </ul>
+        <h2><a href="#sub3">컴퓨터/가전</a></h2>
+        <ul id="sub3">
+            <li><a href="#">컴퓨터/노트북</a></li>
+            <li><a href="#">디카/DSLR</a></li>
+            <li><a href="#">생활가전</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

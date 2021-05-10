@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div#subtitle {
+        width: auto;
+        /** 배경이미지에 맞춘 높이값 **/
+        height: 160px;
+        background: url(img/info_bg.png) repeat-x;
+    }
+
+    div#subtitle h2 {
+        width: 288px;
+        height: 108px;
+        margin: auto;
+        background: url(img/center.jpg) no-repeat;
+
+        /** 텍스트 바깥으로 숨겨버리기 **/
+        text-indent: -10000px;
+        /** for FireFox **/
+        overflow: hidden;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="subtitle">
+        <h2>
+            차세대 웹표준을 위한 진화의 시작! 지금 도전하십시오.
+            무한한 가능성이 당신을 기다립니다.
+        </h2>
+    </div>
+</body>
+
+</html>

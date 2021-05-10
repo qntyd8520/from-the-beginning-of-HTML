@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .grad1 {
+        width: 150px;
+        height: 150px;
+
+        /** CSS3을 지원하지 않는 브라우저 용 **/
+        background: #06f;
+
+        /** 웹킷 브라우저 **/
+        background: -webkit-gradient(linear, left top,
+            left bottom, from(#06f), to(#fff));
+
+        /** 파이어폭스 **/
+        background: -moz-linear-gradient(top, #06f, #fff);
+    }
+
+    .grad2 {
+        width: 150px;
+        height: 150px;
+        /** CSS3을 지원하지 않는 브라우저용 **/
+        background: #06f;
+
+        /** 웹킷 브라우저 **/
+        background: -webkit-gradient(linear, left bottom, right top,
+            from(#06f), to(#fff));
+
+        /** 파이어폭스 **/
+        background: -moz-linear-gradient(bottom 45deg, #06f, #fff);
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1>선형 그라데이션</h1>
+    <p>색상만 지정했을 때</p>
+    <div class="grad1"></div>
+    <p>방향을 지정했을 때</p>
+    <div class="grad2"></div>
+</body>
+
+</html>

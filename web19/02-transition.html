@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 기본 초기화 처리 **/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        background-color: #eee;
+    }
+
+    /** 타이틀 바 영역의 배경색상 그라데이션 처리 **/
+    .titlebar {
+        width: 100%;
+        height: 45px;
+        border-bottom: 1px solid #555;
+        /** 웹킷에 대한 그라데이션 - 구글크롬 **/
+        background-image: -webkit-linear-gradient(top, rgb(89, 189, 212) 8%,
+            rgb(40, 142, 168) 74%);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    /** 목록 정의 초기화 **/
+    ul {
+        list-style: none;
+    }
+
+    /** 리스트 항목 가로 배치 **/
+    .navi>li {
+        width: 25%;
+        float: left;
+        height: 45px;
+    }
+
+    /** Float 처리 마감제 **/
+    .navi:after {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    /** 링크의 사이즈 처리 및 텍스트 꾸밈 **/
+    .navi>li>a {
+        text-decoration: none;
+        display: block;
+        width: auto;
+        height: 45px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 45px;
+        color: white;
+        text-shadow: 0 1px 1px black;
+        -webkit-transition: all 0.2s ease-in;
+    }
+
+    /** 링크 마우스 오버 **/
+    .navi>li:hover>a {
+        color: #f60;
+        position: relative;
+        top: -1px;
+    }
+
+    /** 2depth 메뉴 컨테이너 **/
+    .navi>li>ul {
+        background: rgb(89, 189, 212);
+        width: 100%;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+
+        /** 타이틀 바 보다 작은 값 **/
+        z-index: 100;
+        /** 숨김처리 **/
+        opacity: 0;
+        visibility: hidden;
+
+        position: relative;
+        top: 15px;
+    }
+
+    /** 2depth 메뉴 보이기 처리 **/
+    .navi>li:hover>ul {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: all 0.5s;
+
+        position: relative;
+        top: 0px;
+    }
+
+    /** 2depth 메뉴 컨테이너 각 항목 > 링크 **/
+    .navi ul>li>a {
+        display: block;
+        text-align: center;
+        height: 30px;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 30px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /** 2depth 메뉴 컨테이너 각 항목 > 링크 마우스 오버 **/
+    .navi ul>li>a:hover {
+        color: #ff0;
+        background: rgb(89, 179, 192);
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <header class="titlebar">
+        <ul class="navi">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">웹개발</a>
+                <ul>
+                    <li><a href="#">웹표준</a></li>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">jQuery</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">게시판</a>
+                <ul>
+                    <li><a href="#">자유게시판</a></li>
+                    <li><a href="#">질문과 답변</a></li>
+                    <li><a href="#">방명록</a></li>
+                </ul>
+            </li>
+            <li><a href="#">프로필</a></li>
+        </ul>
+    </header>
+</body>
+
+</html>

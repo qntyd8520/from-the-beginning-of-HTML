@@ -1,0 +1,50 @@
+		<ul id="icon_list">
+			<li>
+				<a href="#">
+					<span class="icon" id="icon1"></span>
+					<span class="txt">전화걸기</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon2"></span>
+					<span class="txt">트위터</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon3"></span>
+					<span class="txt">패이스북</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon4"></span>
+					<span class="txt">메일</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon5"></span>
+					<span class="txt">RSS</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon6"></span>
+					<span class="txt">음악</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon7"></span>
+					<span class="txt">검색</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon" id="icon8"></span>
+					<span class="txt">홈</span>
+				</a>
+			</li>
+		</ul>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>My WebPage</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    div {
+        border: 5px solid red;
+        width: 480px;
+        height: 150px;
+        margin: 5px auto;
+        background: url(img/main_content_bg.png) no-repeat;
+    }
+
+    /**
+      * 배경이미지 위치에 대한 px좌표 지정
+      * --> 박스의 좌측 상단에서 정해진 위치만큼 이동되어 표시된다.
+   **/
+    div#box2 {
+        background-position: 70px 50px;
+    }
+
+    /**
+      * 위치 관련 속성의 특성
+      * --> 음수값을 지정할 수 있다. (반대방향으로 이동)
+   **/
+    div#box3 {
+        background-position: -70px -50px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+
+</html>
