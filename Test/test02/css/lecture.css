@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/** 내용 영역
+---------------------------------------------------**/
+#content {
+    width: 318px;
+    margin: auto;
+    position: relative;
+}
+
+/** 내용 영역 > 서브타이틀
+---------------------------------------------------**/
+#content h2 {
+    color: #ff6600;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/** 내용 영역 > 수강신청 버튼
+---------------------------------------------------**/
+#content .button {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+}
+
+/** 내용 영역 > 게시물 박스
+---------------------------------------------------**/
+#content li {
+    padding: 10px;
+    width: 290px;
+    margin: auto;
+    border: 1px solid #000000;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+#content li:last-child {
+    margin-bottom: 0;
+}
+
+/** 내용 영역 > 게시물 박스 > 링크
+---------------------------------------------------**/
+#content li a {
+    display: block;
+    width: auto;
+}
+
+/** 내용 영역 > 게시물 박스 > 링크 > 이미지 박스
+---------------------------------------------------**/
+#content li a .thumb {
+    display: block;
+    float: left;
+}
+
+/** 내용 영역 > 게시물 박스  > 링크 > 본문박스
+---------------------------------------------------**/
+#content li a .desc {
+    display: block;
+    width: 190px;
+    float: right;
+    font-size: 0.8em;
+    line-height: 125%;
+}
+
+/** 내용 영역 > 게시물 박스  > 마감제
+---------------------------------------------------**/
+#content li:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+/** 내용 영역 > 게시물 박스 > 강의제목
+---------------------------------------------------**/
+#content li .orange {
+    color: #ff6600;
+}
