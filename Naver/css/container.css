@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+#body {
+    font-size: 12px;
+    line-height: 16px;
+    color: #202020;
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 1130px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    letter-spacing: -.2px;
+}
+
+.column_left {
+    float: left;
+    width: 750px;
+}
+
+.column_right {
+    float: right;
+    width: 350px;
+}
+
+div {
+    display: block;
+}
+
+#container:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
+}
+
+.sc_themecast .btn_more_wrap {
+    position: relative;
+    padding-top: 18px;
+    margin-bottom: 42px;
+    border-bottom: 1px solid #e4e8eb;
+}
+
+.sc_themecast .btn_more_wrap .btn_more {
+    position: absolute;
+    top: 0;
+    left: 334px;
+    color: #505050;
+    cursor: pointer;
+}
+
+.sc_themecast .btn_more_wrap .icon_more {
+    width: 42px;
+    height: 42px;
+    background-position: 0 -342px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    display: block;
+    margin: 0 auto 3px;
+    background-position: 0 -342px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    background-size: 440px 408px;
+}

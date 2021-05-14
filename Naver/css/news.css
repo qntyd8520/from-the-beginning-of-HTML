@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+/* 뉴스 캐스트 왼쪽 아이콘 설정.
+------------------------------*/
+#NM_NEWSSTAND_TITLE>.link_newsstand:before {
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    background-position: -228px -296px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: -6px 1px 0 0;
+    background-size: 440px 408px;
+}
+
+/* 뉴스 캐스트 기본 크기
+------------------------------*/
+.sc_newscast {
+    width: 750px;
+    margin-top: 12px
+}
+
+/* 뉴스 캐스트 Header 크기 및 위치, 색상
+------------------------------*/
+.sc_newscast .group_issue {
+    position: relative;
+    padding: 12px 15px 11px 15px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+    line-height: 24px
+}
+
+/* 뉴스 캐스트 Header 마감제 처리
+------------------------------*/
+.sc_newscast .group_issue:after {
+    content: "";
+    display: block;
+    table-layout: fixed;
+    clear: both
+}
+
+/* 뉴스 캐스트 Header 위치
+------------------------------*/
+.sc_newscast .group_issue .issue_area {
+    float: left
+}
+
+/* 뉴스 캐스트 Header 마감제 처리
+------------------------------*/
+.sc_newscast .group_issue .issue_area:after {
+    content: "";
+    display: block;
+    table-layout: fixed;
+    clear: both
+}
+
+/* 뉴스 캐스트 Header 연합뉴스 설정.
+------------------------------*/
+.sc_newscast .group_issue .link_media {
+    float: left;
+    margin-right: 7px;
+    font-size: 13px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none
+}
+
+/* 뉴스 캐스트 Header 연합뉴스 마감제 처리
+------------------------------*/
+.sc_newscast .group_issue .link_media:after {
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background-position: -262px -112px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: 7px 0 0 6px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    -webkit-background-size: 440px 408px;
+    background-size: 440px 408px;
+}
+
+/* 뉴스 캐스트 Header 네이버뉴스, 연애, 스포츠, 경제 크기 설정.
+------------------------------*/
+.sc_newscast .group_issue .list_issue {
+    font-size: 13px;
+    overflow: hidden;
+    float: left;
+    width: 310px;
+    height: 24px
+}
+
+.sc_newscast .group_issue .list_issue:hover {
+    text-decoration: underline;
+}
+
+.sc_newscast .group_issue .direct_area {
+    float: right;
+    font-weight: 700
+}
+
+/* 뉴스 캐스트 Header 네이버뉴스, 연애, 스포츠, 경제 설정 마감제 처리
+------------------------------*/
+.sc_newscast .group_issue .direct_area:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both
+}
+
+/* 뉴스 캐스트 Header 네이버뉴스, 연애, 스포츠, 경제 설정.
+------------------------------*/
+.sc_newscast .group_issue .direct_area .link_direct,
+.sc_newscast .group_issue .direct_area .link_news {
+    float: left;
+    height: 24px;
+    font-size: 13px;
+    text-decoration: none
+}
+
+/* 뉴스 캐스트 Header 네이버뉴스 색 설정
+------------------------------*/
+.sc_newscast .group_issue .direct_area .link_news {
+    color: #3565c9
+}
+
+/* 뉴스 캐스트 Header 네이버뉴스 마감제 처리
+------------------------------*/
+.sc_newscast .group_issue .direct_area .link_news:after {
+    background-color: #c8ccd1;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: top;
+    content: '';
+    margin-left: 8px;
+    vertical-align: 3px
+}
+
+/* 뉴스 캐스트 Header 연애, 스포츠, 경제 설정.
+------------------------------*/
+.sc_newscast .group_issue .direct_area .link_direct {
+    margin: 0 4px 0 7px;
+    color: #202020
+}
+
+/* 뉴스 캐스트 title 영역 설정
+------------------------------*/
+.sc_newscast .group_title {
+    padding: 22px 0 16px;
+    font-size: 14px;
+    line-height: 18px
+}
+
+/* 뉴스 캐스트 title 마감제 처리
+------------------------------*/
+.sc_newscast .group_title:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both
+}
+
+/* 뉴스 캐스트 title 뉴스스탠드 설정
+------------------------------*/
+.sc_newscast .group_title .link_newsstand {
+    float: left;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap
+}
+
+/* 뉴스 캐스트 title 뉴스스탠드 마감제 처리
+------------------------------*/
+.sc_newscast .group_title .link_newsstand:before {
+    display: inline-block;
+    width: 27px;
+    height: 24px;
+    background-position: -228px -296px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin: -6px 1px 0 0
+}
+
+/* 뉴스 캐스트 title 뉴스스탠드 마감제 처리
+------------------------------*/
+.sc_newscast .group_title .link_newsstand:after {
+    display: inline-block;
+    width: 7px;
+    height: 11px;
+    background-position: -408px -146px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    content: '';
+    margin-left: 6px;
+    vertical-align: -1px;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    -webkit-background-size: 440px 408px;
+    background-size: 440px 408px;
+}
+
+/* 뉴스 캐스트 title 구독한 언론사, 전체 언론사 설정
+------------------------------*/
+.sc_newscast .group_title .sort_area {
+    float: left;
+    margin-left: 10px
+}
+
+/* 뉴스 캐스트 title 구독한 언론사 설정
+------------------------------*/
+.sc_newscast .group_title .btn_sort {
+    font-size: 14px;
+    color: #505050;
+    text-decoration: none
+}
+
+/* 뉴스 캐스트 title 구독한 언론사 마감제 처리
+------------------------------*/
+.sc_newscast .group_title .btn_sort+.btn_sort:before {
+    background-color: #c7ccd1;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: top;
+    content: '';
+    margin: 0 8px 0 4px;
+    vertical-align: 3px
+}
+
+/* 뉴스 캐스트 title  전체 언론사 설정
+------------------------------*/
+.sc_newscast .group_title .btn_sort.sort_on {
+    color: #000;
+    font-weight: 700
+}
+
+/* 뉴스 캐스트 아이콘 설정
+------------------------------*/
+.sc_newscast .group_title .set_area {
+    float: right
+}
+
+/* 뉴스 캐스트 아이콘 마감제 처리
+------------------------------*/
+.sc_newscast .group_title .set_area:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both
+}
+
+/*뉴스 캐스트 리스트형, 썸네일형, 설정 버튼
+------------------------*/
+.sc_newscast .group_title .btn_set {
+    float: left;
+    padding: 0 9px
+}
+
+#newsstand .set_area .icon_tile {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    background-size: 440px 408px;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-position: -420px -376px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+#newsstand .set_area .icon_list {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    background-position: -420px -331px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    opacity: 0.7;
+    background-size: 440px 408px;
+}
+
+#newsstand .set_area .icon_set {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    background-size: 440px 408px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: -420px -276px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    opacity: 0.7;
+    margin: -1px 0 1px;
+}
+
+/*뉴스스탠드 테이블 전체 영역 지정
+------------------------*/
+
+.newsstand_view_container {
+    width: 750px;
+    height: 260px;
+    border-top: 1px solid #dae1e6;
+    position: relative;
+}
+
+/*뉴스스탠드 테이블 크기 설정
+------------------------*/
+
+.newsstand_thumb .newsstand_thumb_border {
+    width: 98.5%;
+    height: 65px;
+    border-bottom: 1px solid #dae1e6;
+    border-left: 1px solid #dae1e6;
+    border-right: 1px solid #dae1e6;
+}
+
+/*뉴스스탠드 테이블 설정
+------------------------*/
+.newsstand_thumb {
+    display: table;
+    float: left;
+    width: 16.67%;
+    height: 65px;
+    margin: auto;
+    background-color: #ffffff;
+    text-align: center;
+
+}
+
+/*뉴스스탠드 테이블 이미지 및 설명 설정
+------------------------*/
+.newsstand_thumb .thumb {
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 22px 0 22px;
+    text-align: center;
+    cursor: pointer;
+    margin: auto;
+}
+
+/*뉴스스탠드 테이블 높이 설정
+------------------------*/
+.newsstand_thumb img {
+    height: 20px;
+}
+
+.newsstand_thumb:hover {
+    background-color: #d5d7d8;
+    position: relative;
+    top: -1px;
+    left: 1px;
+}
+
+/*뉴스스탠드 다음 버튼*/
+.newsstand_view_container .pm_btn_next_1 {
+    position: absolute;
+    right: -14px;
+    top: 113px;
+    z-index: 1000;
+}
+
+.pm_btn_next_1 .icon_btn {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    -webkit-background-size: 440px 408px;
+    background-size: 440px 408px;
+    background-repeat: no-repeat;
+}
+
+.newsstand_view_container .pm_btn_next_1 .icon_btn {
+
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+
+    background-position: -92px -296px;
+    vertical-align: top;
+
+}
+
+.newsstand_view_container .pm_btn_next_1:hover .icon_btn {
+
+    background-position: -224px -158px;
+
+}
+
+.pm_btn_prev_1 .icon_btn {
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2021/sp_main_9e1b19.png);
+    -webkit-background-size: 440px 408px;
+    background-size: 440px 408px;
+    background-repeat: no-repeat;
+}
