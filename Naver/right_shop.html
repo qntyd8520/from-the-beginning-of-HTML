@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Naver</title>
+    <!-- 스타일 시트 -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/right_shop.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 오른쪽 사이드바 영역 -->
+    <div id="NM_INT_RIGHT" class="column_right">
+        <div> </div> <!-- timesquare -->
+        <div> </div> <!-- veta_branding -->
+        <!-- shopcast -->
+        <div id="shopcast" class="sc_shopcast" marginwidth="0" marginheight="0">
+            <div id="shop_wrap" class="shop_wrap">
+                <!-- shop header -->
+                <div class="shop_header">
+                    <h1 class="link_shop">
+                        <a href="#" class="ls_link" target="_parent">
+                            트렌드쇼핑
+                        </a>
+                    </h1>
+                    <!-- shop tab -->
+                    <ul id="tab_title" class="shop_tab">
+                        <li id="tab_product" class="tab_item">
+                            <a href="#" class="tab" title="상품은 광고영역입니다.">상품</a>
+                        </li>
+                        <!-- 최상단 상품 버튼 -->
+                        <li id="tab_mall" class="tab_item">
+                            <a href="#" class="tab" title="쇼핑몰은 광고영역입니다.">쇼핑몰</a>
+                        </li>
+                        <!-- 최상단 몰버튼 -->
+                        <li id="tab_men" class="tab_item">
+                            <a href="#" class="tab" title="MEN은 광고영역입니다.">MEN</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- shop header -->
+                <div id="contents" class="shop_content">
+                    <div class="group_mall">
+                        <!-- 쇼핑몰명 링크 -->
+                        <div class="blind">몰 바로가기</div>
+                        <div class="mall_area">
+                            <a href="#" target="_blank" class="link_mall">
+                                <strong>G마켓</strong>
+                            </a>
+                            <span class="ls9"></span>
+                            <a href="#" target="_blank" class="link_mall">옥션</a>
+                            <span class="ls9"></span>
+                            <a href="#" target="_blank" class="link_mall">11번가</a>
+                            <span class="ls9"></span>
+                            <a href="#" target="_blank" class="link_mall">이마트몰</a>
+                            <span class="ls9"></span>
+                            <a href="#" target="_blank" class="link_mall">티몬</a>
+                            <span class="ls9"></span>
+                            <a href="#" target="_blank" class="link_mall">
+                                <strong>위메프</strong>
+                            </a>
+                        </div>
+                        <div class="mall_area">
+                            <a href="#" target="_blank" class="link_mall">
+                                <strong>쿠팡</strong>
+                            </a>
+                            <span class="ls7"></span>
+                            <a href="#" target="_blank" class="link_mall">신세계몰</a>
+                            <span class="ls7"></span>
+                            <a href="#" target="_blank" class="link_mall">
+                                <strong>올리브영</strong>
+                            </a>
+                            <span class="ls7"></span>
+                            <a href="#" target="_blank" class="link_mall">GS샵</a>
+                            <span class="ls7"></span>
+                            <a href="#" target="_blank" class="link_mall">롯데i몰</a>
+                            <span class="ls7"></span>
+                            <a href="#" target="_blank" class="link_mall">CJonstyle</a>
+                        </div>
+                    </div>
+                    <div class="group_goods" id="content_productAd">
+                        <!-- 트렌드상품 광고 영역 -->
+                        <div class="shop_control">
+                            <div class="num_box">
+                                <em class="current">
+                                    <span class="blind">현재</span>
+                                    1
+                                </em>
+                                <span class="blind">전체</span>
+                                / 18
+                            </div>
+                            <div class="btn_box">
+                                <a href="#" class="btn btn_prev" id="prod_page_prev">
+                                    <span class="blind">이전</span>
+                                </a>
+                                <a href="#" class="btn btn_next" id="prod_page_next">
+                                    <span class="blind">다음</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="list_goods_wrap">
+                            <h4 class="blind">중단광고</h4>
+                            <ul class="list_goods">
+                                <li class="goods_item" id="goodsItem1">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/피부건조.png" alt="피부건조해결!~ 역대급 최대혜택">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">피부건조해결!~</span>
+                                            <span class="title">역대급 최대 혜택</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem2">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/전상품 12%.png" alt="전상품 12% 세일! 세련된~데일리룩">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">전상품 12% 세일!</span>
+                                            <span class="title">세련된~데일리룩</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem3">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/무료배송60%.png" alt="무료배송+60%할인 허시파피 캐주얼">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">무료배송+60%할인</span>
+                                            <span class="title">허시파피 캐주얼</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem4">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/신상10%.png" alt="신상10%세일 초특가가격!">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">신상10%세일</span>
+                                            <span class="title">초특가가격!</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem5">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/점심먹고 한포.png" alt="점심먹고 한포 V라인 생겼습니다">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">점심먹고 한포</span>
+                                            <span class="title">V라인 생겼습니다</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem6">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/뱃살어디.png" alt="뱃살어디갔어? 쫀쫀~제시믹스1+1">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">뱃살어디갔어?</span>
+                                            <span class="title">쫀쫀~제시믹스1+1</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem7">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/최대 50% 세일.png" alt="최대 50% SALE 원피스 인기폭발!">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">침대 50% SALE</span>
+                                            <span class="title">윈피스 인기폭발!</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem8">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/여름침구65종.png" alt="여름침구65종모음 최대49%SALE">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">여름침구65종모음</span>
+                                            <span class="title">최대49%SALE</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem9">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/귀걸이 당일출고.png" alt="귀걸이 당일출고 자신있게추천해요">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">귀걸이 당일출고</span>
+                                            <span class="title">자신있게추천해요</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem10">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/예쁜데 안사.png" alt="예쁜데 안사> 초경량 9g 티탄">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">예쁜데 안사?</span>
+                                            <span class="title">초경량 9g 티탄</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem11">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/땀 폭발.png" alt="땀 폭발! 비법은? 다이어트땀복 1+1">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">땀 폭발! 비법은?</span>
+                                            <span class="title">다이어트땀복 1+1</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem12">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/시원한 여름이불.png" alt="시원한 여름이불~ 35%론칭특가전~!">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">시원한 여름이불~</span>
+                                            <span class="title">35%론칭특가전~!</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="shop_page">
+                            <a href="#" class="btn btn_prev" id="prod_page_prev_buttom">
+                                <span class="blind">이전</span>
+                            </a>
+                            <div class="num_box">
+                                <em class="current">
+                                    <span class="blind">현재</span>
+                                    1
+                                </em>
+                                <span class="blind">전체</span>
+                                / 18
+                            </div>
+                            <a href="#" class="btn btn_next" id="prod_page_next_bottom">
+                                <span class="blind">다음</span>
+                            </a>
+                        </div>
+                        <input type="hidden" name="exposePage" class="exposePage" value="1">
+                        <input type="hidden" name="order" class="order" value="15">
+                        <input type="hidden" name="totalCount" class="totalCount" value="18">
+                        <input type="hidden" name="tabName" class="tabName" value="productAd">
+                        <div style="display: none">
+                            <a href="#" class="btn btn_next main_next"></a>
+                        </div>
+                    </div>
+                    <div class="group_event" id="content_productAdBanner">
+                        <!-- 배너영역시작 -->
+                        <div class="shop_title">
+                            <strong class="title">반갑다! 쇼핑뉴스</strong>
+                            <div class="shop_control">
+                                <div class="num_box">
+                                    <em class="current">
+                                        <span class="blind">현재</span>
+                                        1
+                                    </em>
+                                    <span class="blind">전체</span>
+                                    / 5
+                                </div>
+                                <div class="btn_box">
+                                    <a href="#" class="btn btn_prev" id="news_page_prev">
+                                        <span class="blind">이전</span>
+                                    </a>
+                                    <a href="#" class="btn btn_next" id="news_page_next">
+                                        <span class="blind">다음</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list_event">
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">깔끔대장</em>
+                                    <span class="dsc">물 막힘 없이</span>
+                                    <span class="dsc">벌레 차단해! 3+1</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">STL</em>
+                                    <span class="dsc">레깅스1+1특가</span>
+                                    <span class="dsc">2장1만원대가격</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">브랜디</em>
+                                    <span class="dsc">에뛰드52%특가</span>
+                                    <span class="dsc">+사음품즌정</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">안나앤모드</em>
+                                    <span class="dsc">HOT 여름신상</span>
+                                    <span class="dsc">할인가로 득템!</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">쿠팡</em>
+                                    <span class="dsc">와우회원 전용</span>
+                                    <span class="dsc">최대 77%&darr;</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">패션몰</em>
+                                    <span class="dsc">5% 신상세일</span>
+                                    <span class="dsc">가격도BEST~</span>
+                                </a>
+                            </li>
+                            <li class="event_item">
+                                <a href="#" class="event_area" target="_blank">
+                                    <em class="title">유니프랜드</em>
+                                    <span class="dsc">단, 7일만 선착순</span>
+                                    <span class="dsc">7부세트 3,900원</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <input type="hidden" name="bannerExposePage" id="bannerExposePage" class="banner_area" value="1">
+                        <input type="hidden" name="bannerOrder" id="bannerOrder" class="bannerOrder" value="3">
+                        <input type="hidden" name="bannerTotalCount" id="bannerTotalCount" class="bannerTotalCount" value="5">
+                        <div style="display: none">
+                            <a href="#" class="btn btn_next main_next"></a>
+                        </div>
+                        <!-- 배너영역 종료 -->
+                    </div>
+                    <div class="group_plus" id="contents_productAdPlus">
+                        <!-- 트렌드상품 광고 영역 -->
+                        <div class="shop_category">
+                            <a href="#" id="category_fashion" class="category_fashion">
+                                패션
+                            </a>
+                            <a href="#" id="category_life" class="category_life">라이프</a>
+                            <a href="#" id="category_beauty" class="category_beauty">뷰티</a>
+                            <a href="#" id="category_digital" class="category_digital">디지털&centerdot;레저</a>
+                        </div>
+                        <div class="shop_control">
+                            <div class="num_box">
+                                <em class="current">
+                                    <span class="blind">현재</span>
+                                    1
+                                </em>
+                                <span class="blind">전체</span>
+                                / 8
+                            </div>
+                            <div class="btn_box">
+                                <a href="#" class="btn btn_prev" id="prod_plus_page_prev">
+                                    <span class="blind">이전</span>
+                                </a>
+                                <a href="#" class="btn btn_next" id="prod_plus_page_next">
+                                    <span class="blind">다음</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="list_goods_wrap">
+                            <ul class="list_goods">
+                                <li class="goods_item" id="goodsItem13">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/비건 시카 선크림.png" alt="SPF50+ 비건 시카 선크림">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">SPF50+ 비건 시카 선크림</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="goods_item" id="goodsItem14">
+                                    <a href="#" class="goods_area" target="_blank">
+                                        <div class="thumb_box">
+                                            <img src="shop_img/은은하게 블러셔.png" alt="은은하게 예쁜 블러셔!">
+                                            <span class="thumb_bd"></span>
+                                        </div>
+                                        <p class="title_box">
+                                            <span class="title">은은하게 예쁜 블러셔!</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr />
+</body>
+
+</html>
