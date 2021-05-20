@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1 id="name"></h1>
+    <p>since
+        <span id="since"></span>
+    </p>
+    <h2>주요부서</h2>
+    <ul id="department"></ul>
+    <h2>사업분야</h2>
+    <ul id="biz"></ul>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        // 회사 정보를 표현하는 데이터 구조를 JSON으로 정의
+        // 하나의 JSON 데이터 안에는 일반 변수와 배열 데이터가 공존할 수 있다.
+        var company = {
+            name: "아이티페이퍼",
+            since: 2017,
+            department: ["기획팀", "영업팀", "디자인팀", "개발팀"],
+            biz: ["소프트웨어개발", "통신판매업", "위치정보서비스"]
+        };
+
+        $('#name').html(company.name);
+        $('#since').html(company.since);
+
+        // 주요부서를 출력하기 위해 배열을 반복문으로 읽는다.
+        var dept_li = "";
+        for (var i = 0; i < company.department.length; i++) {
+            dept_li += "<li>" + company.department[i] + "</li>";
+        }
+
+        $('#department').html(dept_li);
+
+        // 사업분야를 출력하기 위해 배열을 반복문으로 읽는다.
+        var biz_li = "";
+        for (var i = 0; i < company.biz.length; i++) {
+            biz_li += "<li>" + company.biz[i] + "</li>";
+        }
+
+        $('#biz').html(biz_li);
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

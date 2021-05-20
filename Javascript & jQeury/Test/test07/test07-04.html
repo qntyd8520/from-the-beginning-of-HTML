@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form name="myform">
+        <table border="1" cellpadding="3" style="border-collapse: collapse; border-color: #eee">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th align="center">HTML</th>
+                    <th align="center">CSS</th>
+                    <th align="center">Javascript</th>
+                    <th align="center">총점</th>
+                    <th align="center">평균</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>둘리</td>
+                    <td>
+                        <input type="text" name="html">
+                    </td>
+                    <td>
+                        <input type="text" name="css">
+                    </td>
+                    <td>
+                        <input type="text" name="js">
+                    </td>
+                    <td>
+                        <input type="text" name="sum">
+                    </td>
+                    <td>
+                        <input type="text" name="avg">
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6" align="center">
+                        <input type="button" value="총점, 평균 계산" onclick="process()" />
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    function process() {
+        var frm = document.myform;
+
+        /** HTML점수입력 예외처리 **/
+        if (frm.html.value == "" || isNaN(frm.html.value)) {
+            alert("HTML의 점수는 숫자만 입력가능합니다.");
+            return;
+        } else if (parseInt(frm.html.value) < 0 || parseInt(frm.html.value) > 100) {
+            alert("HTML의 점수는 0 ~ 100 사이의 숫자만 입력가능 합니다.");
+            return;
+        } else if (!isNaN(frm.html.value)) {
+            var html_score = frm.html.value;
+        }
+
+        /** CSS점수입력 예외처리 **/
+        if (frm.css.value == "" || isNaN(frm.css.value)) {
+            alert("CSS의 점수는 숫자만 입력가능합니다.");
+            return;
+        } else if (parseInt(frm.css.value) < 0 || parseInt(frm.css.value) > 100) {
+            alert("CSS의 점수는 0 ~ 100 사이의 숫자만 입력가능 합니다.");
+            return;
+        } else if (!isNaN(frm.css.value)) {
+            var css_score = frm.css.value;
+        }
+
+        /** JS점수입력 예외처리 **/
+        if (frm.js.value == "" || isNaN(frm.js.value)) {
+            alert("JS의 점수는 숫자만 입력가능합니다.");
+            return;
+        } else if (parseInt(frm.js.value) < 0 || parseInt(frm.js.value) > 100) {
+            alert("JS의 점수는 0 ~ 100 사이의 숫자만 입력가능 합니다.");
+            return;
+        } else if (!isNaN(frm.js.value)) {
+            var js_score = frm.js.value;
+        }
+
+        frm.sum.value = eval(html_score) + eval(css_score) + eval(js_score);
+        avg = eval(frm.sum.value) / 3;
+        avg = avg.toFixed(2);
+        frm.avg.value = avg;
+    }
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

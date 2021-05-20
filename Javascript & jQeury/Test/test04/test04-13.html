@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    function find(source, keyword) {
+        var count = 0;
+
+        while (true) {
+            var idx = source.indexOf(keyword);
+
+            if (idx > -1) {
+                count++;
+
+                source = source.substring(idx + keyword.length);
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
+    var story = "소년은 개울가에서 소녀를 보게 되지만, 말도 제대로 못 붙이는 내성적인 성격이다. 어느 날, 소녀가 그런 소년에게 조약돌을 던져 관심을 나타내고, 소년은 이를 소중히 간직한다.";
+
+    var x = find(story, "소년");
+    var y = find(story, "소녀")
+    console.log("소년은 " + x + "번, 소녀는 " + y + "번 등장합니다.");
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+</body>
+
+</html>

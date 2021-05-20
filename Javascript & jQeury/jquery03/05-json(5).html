@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <<h1 id="title">
+        </h1>
+        <p id="description"></p>
+        <p>총 게시물 수 :
+            <span id="total"></span>
+        </p>
+        <table width="800" border="1">
+            <thead>
+                <tr>
+                    <th align="center">번호</th>
+                    <th align="center">제목</th>
+                    <th align="center">조회수</th>
+                    <th align="center">작성일</th>
+                </tr>
+            </thead>
+            <tbody id="list"></tbody>
+        </table>
+        <!-- Javascript Start -->
+        <!-- jQeury 사용 -->
+        <script src="../jquery-3.6.0.min.js"></script>
+        <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+        <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+        <script type="text/javascript">
+        /** 게시판의 정보를 표현하기 위한 JSON 데이터 정의 **/
+        // 블록 {} 밖에서 정의된 변수나 객체는 블록{} 안에서 인식할 수 있다.
+        var bbs = {
+            title: "Javascript + jQuery + Ajax 완벽가이드",
+            description: "Javascript 강의 노트 입니다.",
+            total: 4,
+            item: [
+                { no: 4, subject: "4강-함수", hit: 3, date: "2018.02.27" },
+                { no: 3, subject: "3강-반복문", hit: 6, date: "2018.03.08" },
+                { no: 2, subject: "2강-조건문", hit: 15, date: "2018.03.07" },
+                { no: 1, subject: "1강-변수와 연산자", hit: 19, date: "2018.03.05" }
+            ]
+        };
+
+        $(function() {
+            $('#title').html(bbs.title);
+            $('#description').html(bbs.description);
+            $('#total').html(bbs.total);
+
+            // 배열로 표현되는 게시물 정보에대한 출력 HTML 생성
+            var mytag = "";
+
+            for (var i = 0; i < bbs.item.length; i++) {
+                mytag += "<tr>";
+                mytag += "<td>" + bbs.item[i].no + "</td>";
+                mytag += "<td>" + bbs.item[i].subject + "</td>";
+                mytag += "<td>" + bbs.item[i].hit + "</td>";
+                mytag += "<td>" + bbs.item[i].date + "</td>";
+                mytag += "</tr>"
+            }
+
+            $('#list').html(mytag);
+        });
+        </script>
+        <!-- Javascript end -->
+</body>
+
+</html>

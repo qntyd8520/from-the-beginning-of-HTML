@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .event-box {
+        font-size: 20px;
+        padding: 20px 10px;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        width: 500px;
+    }
+
+    .input {
+        border: 5px solid #007;
+        background: #d5d5d5;
+        color: #009;
+    }
+
+    .console {
+        border: 5px solid #a0a;
+        background: #d5d5d5;
+        color: #505;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <input type="text" id="listener" class="event-box input" placeholder="여기에 입력하세요">
+    <div class="event-box" console>
+        <p>keyCode=<span id="result1">0</span></p>
+        <p>enter press=<span id="result2">none</span></p>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $('#listener').keyup(function(e) {
+            $('#result1').html(e.keyCode);
+
+            if (e.keyCode == 13) {
+                $('#result2').html("엔터키가 눌러졌습니다.");
+            } else {
+                $('#result2').html("none");
+            }
+        });
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

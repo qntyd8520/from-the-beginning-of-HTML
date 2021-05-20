@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 태그 셀렉터 **/
+    h2 {
+        color: #0000ff;
+    }
+
+    /** 클래스 셀렉터 - HTML태그의 class 속성과 연결된다. **/
+    .myclass {
+        color: #ff0000;
+    }
+
+    /** 아이디 셀렉터 - HTML태그의 id속성과 연결된다. **/
+    #myid {
+        color: #00ff00;
+    }
+
+    /** 조합형 - 두 조건이 충족하는 경우에만 적용된다. **/
+    h2.myclass {
+        color: #008000;
+    }
+    </style>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    </script>
+    <!-- Javascript end -->
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div>
+        <h1>CSS 셀렉터를 알아봅시다.</h1>
+        <p>
+            셀렉터란? - CSS 가 적용될 대상을 지정하는 방법.
+        </p>
+        <h2>태그 셀렉터</h2>
+        <h2 class="myclass">클래스 셀렉터</h2>
+        <p class="myclass">서로 다른 여러 개의 요소에 적용할 수 있다.</p>
+        <h2 id="myid">아이디 셀렉터</h2>
+        <p class="myclass">태그+아이디, 태그+클래스 형식으로 조합이 가능.</p>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

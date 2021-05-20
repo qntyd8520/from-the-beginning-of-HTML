@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>javascript Test</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    var result = "*";
+
+    function insertStar(x) {
+        document.getElementById("console").innerHTML = "";
+        for (var i = 1; i <= x; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.getElementById("console").innerHTML += result;
+            }
+            document.getElementById("console").innerHTML += "<br />";
+        }
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    #console {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #d5d5d5;
+        background-color: #eee;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div>
+        <button onclick="insertStar(5)">5줄</button>
+        <button onclick="insertStar(10)">10줄</button>
+        <button onclick="insertStar(15)">15줄</button>
+    </div>
+    <div id="console"></div>
+</body>
+
+</html>

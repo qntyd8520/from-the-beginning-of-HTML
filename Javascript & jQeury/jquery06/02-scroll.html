@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .box {
+        height: 5000px;
+        background: linear-gradient(to bottom, #2126a8 0%, #cdcfd6 100%);
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="container">
+        <div class="box"></div>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        /** 브라우저에 대한 스크롤 감지 이벤트 정의 **/
+        $(window).scroll(function() {
+            // 스크롤이 맨 끝에 도달했음을 감지하는 조건문
+            if ($(window).height() + $(window).scrollTop() == $(document).height()) {
+                console.log("끝에 도착함");
+                // #container안에 현재 표시중인 태그 요소를 가져온다.
+                var tag = $('#container').html();
+
+                // 새로운 태그요소를 덧붙인다.
+                tag += "<div class='box'></div>";
+
+                // #container안에 (기존캐그 + 새로운 태그) 를 출력한다.
+                $("#container").html(tag);
+            }
+        });
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

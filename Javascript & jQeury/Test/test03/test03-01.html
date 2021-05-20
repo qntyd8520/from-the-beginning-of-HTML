@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Javascript Test</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    function insertYear() {
+        var year = prompt("태어난 년도를 입력하세요.", "");
+
+        if (year == "") {
+            alert("올바른 입력값이 아닙니다.")
+            return;
+        } else if (!isNaN(year)) {
+            var age = 2021 - parseInt(year) + 1;
+
+            var result = "당신의 나이는 " + age + "세 입니다.";
+        } else {
+            alert("올바른 입력값이 아닙니다.")
+            return;
+        }
+        document.getElementById("console").innerHTML = result;
+    }
+
+    function insertAge() {
+        var age = prompt("나이를 입력하세요.", "");
+
+        if (age == "") {
+            alert("올바른 입력값이 아닙니다.")
+            return;
+        } else if (!isNaN(age)) {
+            var year = 2021 - parseInt(age) + 1;
+
+            var result = "당신이 태어난 년도는 " + year + "년 입니다.";
+        } else {
+            alert("올바른 입력값이 아닙니다.")
+            return;
+        }
+        document.getElementById("console").innerHTML = result;
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    #console {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #d5d5d5;
+        background-color: #eee;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div>
+        <button onclick="insertYear()">태어난 년도로 나이 계산하기</button>
+        <button onclick="insertAge()">나이로 태어난 년도 계산하기</button>
+    </div>
+    <div id="console"></div>
+</body>
+
+</html>

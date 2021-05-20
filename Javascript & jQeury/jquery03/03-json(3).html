@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1>둘리의 과목점수</h1>
+    <ol id="list"></ol>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        // 하위 데이터 요소로서 JSON을 포함하고 있는 중첩 JSON데이터
+        var dolly = {
+            r1: { subject: "HTML5", point: 78 },
+            r2: { subject: "CSS", point: 82 },
+            r3: { subject: "Javascript", point: 63 }
+        };
+
+        // JSON 데이터의 내용을 목록정의 태그로 구성
+        var tag = "<li>" + dolly.r1.subject + " : " + dolly.r1.point + "</li>";
+        tag += "<li>" + dolly.r2.subject + " : " + dolly.r2.point + "</li>";
+        tag += "<li>" + dolly.r3.subject + " : " + dolly.r3.point + "</li>";
+
+        // 구성한 내용을 화면에 출력
+        $('#list').html(tag);
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>
