@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    // <h1>태그를 클릭하였을 때 실행할 함수
+    function h1_click() {
+        alert("클릭하셨습니다.");
+    }
+
+    // <body>의 onload 이벤트에 연결할 함수
+    function sayHello() {
+        alert("안녕하세요. 자바스크립트");
+    }
+
+    // <body>의 onload 이벤트에 연결할 함수 (2)
+    function initPage() {
+        var h1 = document.getElementById("hello");
+        h1.style.color = "#0000ff";
+        h1.style.backgroundColor = "#d5d5d5";
+        h1.style.fontSize = "50px";
+        h1.style.padding = "15px";
+        h1.style.margin = "0";
+        h1.innerHTML = "Hello Javascript";
+
+        // 페이지 로드가 완료된 이후에도 <h1>태그에 이벤트를 연결할 수 있다.
+        // 단, IE와 그 이외의 브라우저를 구별해 주어야 한다.
+        if (window.addEventListener) {
+            // for Non IE
+            h1.addEventListener("click", h1_click, false)
+        } else {
+            // for IE
+            h1.attachEvent("click", h1_click);
+        }
+    }
+
+    /** 비 IE와 IE를 분기하여 각각 이벤트 적용 **/
+    if (window.addEventListener) {
+        // for Non IE
+        window.addEventListener("load", sayHello, false);
+        window.addEventListener("load", initPage, false);
+    } else {
+        // for IE
+        window.attachEvent("load", sayHello);
+        window.attachEvent("load", initpage);
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- body 태그에 기술되던 Javascript 구문이 분리되었다. -->
+    <!-- 제어 대상에게 id속성값을 부여한다. -->
+    <h1 id="hello"></h1>
+</body>
+
+</html>

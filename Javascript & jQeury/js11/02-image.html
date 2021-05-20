@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    /** 링크에 의해서 호출될 함수 **/
+    function setImage(index) {
+        // 이미지의 경로를 담고 있는 배열
+        var image_list = ["img/1.jpg", "img/2.jpg", "img/3.jpg"]
+
+        // 이미지의 요소의 객체화
+        var image = document.getElementById("target");
+
+        // 객체의 src속성에 배열의 값들 중에서 파라미터로 전달된 위치의 값을 설정한다.
+        image.src = image_list[index];
+    };
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 목록 정의 초기화 및 목록 박스 좌측 배치 **/
+    .thumbnail {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 120px;
+        float: left;
+    }
+
+    /** 목록의 각 항목에 대한 크기 및 여백 설저 **/
+    .thumbnail li {
+        width: 100px;
+        height: 100px;
+        padding: 5px 10px;
+    }
+
+    /** 썸네일 이미지의 크기 설정 **/
+    .thumbnail img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /** 큰 이미지 영역의 배치와 크기, 여백 설정 **/
+    .view {
+        float: left;
+        width: 500px;
+        height: 320px;
+        padding: 5px 0;
+    }
+
+    /** 큰 이지미의 크기 설정 **/
+    .view img {
+        width: 500px;
+        height: 320px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 각 이미지를 포함하는 링크를 클릭했을 경우, setImage 함수 호출 -->
+    <ul class="thumbnail">
+        <li>
+            <a href="#" onclick="setImage(0); return false;">
+                <img src="img/1.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="setImage(1); return false;">
+                <img src="img/2.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="setImage(2); return false;">
+                <img src="img/3.jpg" />
+            </a>
+        </li>
+    </ul>
+    <div class="view">
+        <img src="img/1.jpg" id="target" />
+    </div>
+</body>
+
+</html>

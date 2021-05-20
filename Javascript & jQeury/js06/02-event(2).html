@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    /** showResult() 함수 안에서 호출된다. **/
+    // 두 수를 더한 값을 리턴하여 주는 함
+    function sum(x, y) {
+        var z = x + y;
+        return z;
+    }
+
+    /** (1) id가 question인 요소안에 10+50의 결과를 지정한다. **/
+    function showResult() {
+        var result = sum(10, 50);
+        var red_result = "<font color = 'red'>" + result + "</font>";
+        document.getElementById("question").innerHTML = red_result;
+    }
+
+    /** (2) id가 question인 요소안에 "?" 를 지정한다. **/
+    function hideResult() {
+        document.getElementById("question").innerHTML = "?";
+    }
+    </script>
+    <!-- Javascript end -->
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- (3) <h1> 태그위에 마우스를 올렸을 때, showResult()호출 -->
+    <!-- (4) <h1> 태그위에 마우스를 내렸을 때, hideResult() 호출 -->
+    <h1 onmouseover="showResult()" onmouseout="hideResult()">10 + 50 =<span id="question">?</span></h1>
+    <p>결과를 보시려면 수식 위에 마우스를 올리세요.</p>
+</body>
+
+</html>

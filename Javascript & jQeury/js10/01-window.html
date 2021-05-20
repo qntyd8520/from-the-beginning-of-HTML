@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    function oepn1() {
+        /** 새 창(혹은 탭)띄우기 **/
+        window.open('open.html');
+    }
+
+    function open2() {
+        /** 클릭할 때 마다 창이 새로 열리는 팝업창 **/
+        window.open('open.html', '', 'width=300, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no');
+    }
+
+    function open3(url) {
+        /** 한번 생성된 팝업창을 지속적으로 재사용 하는 팝업창 **/
+        // 팝업의 주소를 파라미터로 전달받는다.
+        window.open(url, 'mywin', 'width=500, height=300, scrollbars=no, toolbar=no, menubar=no, status=no, location=no');
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1>window 객체</h1>
+    <h3>open 메소드 확인</h3>
+    <div>
+        <a href="#" onclick="open1(); return false;">새 창 열기</a>
+        <br>
+        <a href="#" onclick="open2(); return false;">팝업 창 열기 (1)</a>
+        <br>
+        <!-- 파라미터를 포함한 함수의 호출 -->
+        <a href="#" onclick="open3('http://www.naver.com'); return false;">팝업 창 열기 (2-1)</a>
+        <br>
+        <a href="#" onclick="open3('http://www.daum.net'); return false;">팝업 창 열기 (2-2)</a>
+        <br>
+    </div>
+</body>
+
+</html>

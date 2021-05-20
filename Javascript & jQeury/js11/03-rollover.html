@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    // <a>태그에서 정의된 onmouseover와 onmouseout에 의해서 호출되는 함수
+    // 이미지 파일의 경로와 처리할 대상 요소의 id값을 파라미터로 전달 받는다.
+    function changeImage(image, id) {
+        // 파라미터로 전달받은 요소의 id값을 사용하여 image객체를 만드다.
+        // 그 객체의 src속성값에 파라미터로 전달된 이미지 경로를 대입하여,
+        // 표시 이미지를 변경한다.
+        document.getElementById(id).src = image;
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 목록정의 요소의 여백 제거, 넓이지정, 기호 제거 **/
+    ul {
+        padding: 0;
+        margin: 0;
+        width: 670px;
+        list-style: none;
+    }
+
+    /** 목록의 가로 배치 **/
+    li {
+        float: left;
+    }
+
+    /** float 속성 해제 **/
+    ul:after {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    /** 이미지 테두리 제거 **/
+    img {
+        border: none;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <ul>
+        <li>
+            <a href="#" onmouseover="changeImage('img/jquery_on.jpg', 'jquery');" onmouseout="changeImage('img/jquery.jpg', 'jquery');">
+                <img src="img/jquery.jpg" id="jquery" />
+            </a>
+        </li>
+        <li>
+            <a href="#" onmouseover="changeImage('img/javascript_on.jpg', 'js');" onmouseout="changeImage('img/javascript.jpg', 'js');">
+                <img src="img/javascript.jpg" id="js" />
+            </a>
+        </li>
+        <li>
+            <a href="#" onmouseover="changeImage('img/css_on.jpg', 'css');" onmouseout="changeImage('img/css.jpg', 'css');">
+                <img src="img/css.jpg" id="css" />
+            </a>
+        </li>
+        <li>
+            <a href="#" onmouseover="changeImage('img/html_on.jpg', 'html');" onmouseout="changeImage('img/html.jpg', 'html');">
+                <img src="img/html.jpg" id="html" />
+            </a>
+        </li>
+    </ul>
+</body>
+
+</html>

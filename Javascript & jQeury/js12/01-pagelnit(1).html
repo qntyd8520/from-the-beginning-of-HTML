@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    // <h1>태그가 클릭되었을 때, 동작할 함수
+    function h1_click() {
+        alert("클릭하셨습니다.");
+    }
+
+    function initPage() {
+        // 제어할 대상의 id값 ("hello") 에 의하여 태그요소(Element)를 가져온 뒤,
+        // h1이라는 변수에게 대입한다. --> 객체의 생성
+        var h1 = document.getElementById("hello");
+
+        // 가져온 대상의 CSS 속성을 제어한다.
+        // 실제 CSS코드와는 속성 이름이 조금씩 차이가 나며,
+        // 자바스크립트에서는 대소문자도 엄격히 구별해야 한다.
+        h1.style.color = "#0000ff";
+        h1.style.backgroundColor = "#d5d5d5";
+        h1.style.fontSize = "50px";
+        h1.style.padding = "15px";
+        h1.style.margin = "0";
+
+        // 객체의 시작태그와 끝태그 사이에 새로운 내용(혹은 요소)를 포함시킨다.
+        h1.innerHTML = "Hello Javascript";
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+<!-- initPage()함수를 페이지가 모두 로드된 후에 동작시키기 위하여 onload 이벤트에 연결한다. -->
+
+<body onload="initPage();">
+    <!-- 제어 대상에게 id속성값을 부여한다. -->
+    <h1 id="hello" onclick="h1_click();"></h1>
+</body>
+
+</html>

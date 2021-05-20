@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    function doSubmit() {
+        // 폼 객체
+        var frm = document.form1;
+
+        // text 요소의 입력여부 검사
+        if (!frm.user_name.value) {
+            alert("이름을 입력해 주세요.");
+            frm.user_name.focus();
+            return false;
+        }
+        // 라디오 버튼의 입력여부 검사.
+        //항목이 두 개 밖에 없으므로, 굳이 반복문을 처리하지는 않는다.
+        if (!frm.gender[0].checked && !frm.gender[1].checked) {
+            alert("성별을 선택해 주세요.");
+            frm.gender[0].focus();
+            return false;
+        }
+
+        // select 요소에 대한 선택위치 검사
+        if (frm.job.delectedIndex < 1) {
+            alert("직업을 선택해 주세요.");
+            frm.job.focus();
+            return false;
+        }
+
+        // 체크박스의 선택여부 검사
+        var chk = false;
+        for (var i = 0; i < frm.hobby.length; i++) {
+            if (frm.hobby[i].checked) {
+                chk = true;
+                break;
+            }
+        }
+        if (!chk) {
+            alert("취미를 선택해 주세요.");
+            frm.hobby[0].focus();
+            return false;
+        }
+
+        // 입력 확인하기
+        if (confirm("입력하신 내용이 맞습니까?")) {
+            frm.submit();
+        }
+    }
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 하나의 입력 영역을 정의하는 <div>태그 **/
+    .input_group {
+        height: 42px;
+        border-bottom: 1px dotted #ccc;
+        font: 1em/40px '돋움', 'Helvetica';
+    }
+
+    /** 입력양식의 제목을 볼 수 있게 하는 태그 **/
+    .input_group>label {
+        width: 80px;
+        display: inline-block;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form name="form1" onsubmit="doSubmit(); return;">
+        <fieldset>
+            <legend>회원가입</legend>
+            <div class="input_group first">
+                <label>이름</label>
+                <input type="text" name="user_name" />
+            </div>
+            <div class="input_group">
+                <label>성별</label>
+                <label>
+                    <input type="radio" name="gender" value="M"> 남자
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="F"> 여자
+                </label>
+            </div>
+            <div class="input_group">
+                <label>직업</label>
+                <select name="job">
+                    <option>----- 선택하세요 -----</option>
+                    <option value="dev">프로그래머</option>
+                    <option value="pub">퍼블리셔</option>
+                </select>
+            </div>
+            <div class="input_group">
+                <label>취미</label>
+                <label>
+                    <input type="checkbox" name="hobby" value="축구"> 축구
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="농구"> 농구
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="야구"> 야구
+                </label>
+            </div>
+            <div class="input_group">
+                <label>&nbsp;</label>
+                <input type="submit" name="button" value="제출" />
+                <input type="button" name="button2" value="리셋" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>

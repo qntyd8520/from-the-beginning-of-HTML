@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>Hello Javascript</title>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 태그속 alert("내용");은 내용을 대화상자 형태로 표시 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <!-- Javascript Start -->
+    <script type="text/javascript">
+    /**
+     * 객에 안에 멤버변수와 함수를 포함시키기
+     */
+    // 비어있는 객체의 생성
+    var people = {};
+
+    // 객체안에 변수를 포함시키기
+
+    people.name = "김도운";
+    people.gender = "남자";
+
+    // 객체 안에 함수를 포함시키기
+    people.sayName = function() {
+        // 갹체 안에 포함된 함수에서, 멤버변수에 접근하기 위해서는
+        // 반드시 "this."이라는 특수 예약어를 사용해야 한다.
+        document.write("<h1>" + this.name + "</h1>"); // this는 java와 마찬가지로 전역변수를 의미
+    };
+
+    people.sayGender = function() {
+        document.write("<h1>" + this.gender + "</h1>");
+    };
+
+    people.saySomthing = function(msg) {
+        document.write("<h1>" + msg + "</h1>");
+    };
+
+    people.getName = function() {
+        return this.name;
+    };
+    people.getGender = function() {
+        return this.gender;
+    };
+
+    people.sayInfo = function() {
+        document.write("<h1>" + this.getName() + "님은 " + this.getGender() + "입니다.</h1>");
+    };
+
+    // 객체 안의 메서드 호출
+    people.sayName();
+    people.sayGender();
+    people.saySomthing("Hello Javascript");
+    people.sayInfo();
+    </script>
+    <!-- Javascript end -->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+</body>
+
+</html>
