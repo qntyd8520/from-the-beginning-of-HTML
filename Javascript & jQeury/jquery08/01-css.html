@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .box1 {
+        margin: 10px auto;
+        border: 5px solid #ccc;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .box2 {
+        margin: 10px auto;
+        border: 10px solid #ff00ff;
+        background-color: #ff0;
+        padding: 25px;
+        text-align: left;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="box" class="box1">
+        <h1>테스트 영역 입니다.</h1>
+    </div>
+    <input type="button" value="(폰트) red" id="btn1" />
+    <input type="button" value="(폰트) green" id="btn2" />
+    <input type="button" value="(폰트) blue" id="btn3" />
+    <input type="button" value="(배경) red" id="btn4" />
+    <input type="button" value="(배경) green" id="btn5" />
+    <input type="button" value="(배경) blue" id="btn6" />
+    <input type="button" value="width=50%" id="btn7" />
+    <input type="button" value="width=auto" id="btn8" />
+    <input type="button" value="box1 클래스 적용" id="btn9" />
+    <input type="button" value="box2 클래스 적용" id="btn10" />
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        /** btn1~ btn33 --> #box의 글자 색상 변경 **/
+        $('#btn1').click(function() {
+            $('#box').css("color", "red");
+        });
+        $('#btn2').click(function() {
+            $('#box').css("color", "green");
+        });
+        $('#btn3').click(function() {
+            $('#box').css("color", "blue");
+        });
+
+        /** btn4 ~ btn6 --> #box의 배경색상변경 **/
+
+        $('#btn4').click(function() {
+            $('#box').css("background-color", "red");
+        });
+        $('#btn5').click(function() {
+            $('#box').css("background-color", "green");
+        });
+        $('#btn6').click(function() {
+            $('#box').css("background-color", "blue");
+        });
+
+        /** btn7,8 --> #box의 가로 넓이 변경 **/
+        $('#btn7').click(function() {
+            $('#box').css("width", "50%");
+        });
+        $('#btn8').click(function() {
+            $('#box').css("width", "auto");
+        });
+
+        /** #btn9, 10 --> #box에 적용되어 있는 class클래스 토글 처리 **/
+        $('#btn9, #btn10').click(function() {
+            $('#box').toggleClass("box1 box2");
+        });
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

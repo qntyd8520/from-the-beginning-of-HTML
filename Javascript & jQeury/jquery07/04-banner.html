@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 배너영역 -->
+    <div id="banner">
+        <a href="#" id="banner-link" target="_blank">
+            <img src="" id="banner-img" width="320">
+        </a>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    var banner = [
+        { img: 'img/1.jpg', url: 'http://www.itpaper.co.kr' },
+        { img: 'img/2.jpg', url: 'https://www.naver.com' },
+        { img: 'img/3.jpg', url: 'http://www.daum.net' },
+        { img: 'img/4.jpg', url: 'http://www.google.com' }
+    ];
+
+    /* n1 ~ n2 사이의 랜덤값을 리턴하는 함수 */
+    function random(n1, n2) {
+        return parseInt(Math.random() * (n2 - n1 + 1)) + n1;
+    }
+
+    /* banner 배열에서 임의의 요소 하나를 선택하여 #banner영역에 적용하는 함수 */
+    function random_banner() {
+        // 0~배열길이 -1 사이의 랜덤값 얻기
+        var rand = random(0, banner.length - 1);
+
+        // 데이터중 하나 선택 --> JSON객체
+        var item = banner[rand];
+
+        // 배너 적용
+        $('#banner-link').attr('href', item.url);
+        $('#banner-img').attr("src", item.img);
+    }
+
+    /* 페이지가 열린후 바로 호출될 함수 */
+    $(function() {
+        random_banner();
+
+        setInterval(function() {
+            random_banner();
+        }, 3000);
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

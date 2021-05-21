@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    table {
+        width: 800px;
+
+        border: 1px solid #d5d5d5;
+
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid #d5d5d5;
+        width: 20%;
+        text-align: center
+    }
+
+    th {
+        background-color: #eee;
+        padding: 5px 0;
+    }
+
+    .dooly {
+        background-color: #fcf;
+    }
+
+    .douneo {
+        background-color: #ccf;
+    }
+
+    .ddochi {
+        background-color: #ffc;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>학생이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>Javascript</th>
+                <th>+ / -</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="item dooly">
+                <td>둘리</td>
+                <td>92</td>
+                <td>86</td>
+                <td>70</td>
+                <td>
+                    <button type="button" class="up">위로</button>
+                    <button type="button" class="down">아래로</button>
+                </td>
+            </tr>
+            <tr class="item douneo">
+                <td>도우너</td>
+                <td>78</td>
+                <td>82</td>
+                <td>88</td>
+                <td>
+                    <button type="button" class="up">위로</button>
+                    <button type="button" class="down">아래로</button>
+                </td>
+            </tr>
+            <tr class="item ddochi">
+                <td>또치</td>
+                <td>100</td>
+                <td>98</td>
+                <td>62</td>
+                <td>
+                    <button type="button" class="up">위로</button>
+                    <button type="button" class="down">아래로</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $(".up").click(function() {
+            var now_row = $(this).parents('.item');
+
+            var prev_row = now_row.prev();
+
+            now_row.insertBefore(prev_row);
+        });
+
+        $(".down").click(function() {
+            var now_row = $(this).parents('.item');
+
+            var next_row = now_row.next();
+
+            now_row.insertAfter(next_row);
+        });
+
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    .item {
+        border: 1px dotted #ff6600;
+        margin: 10px auto;
+        padding: 5px 10px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <div id="box">
+        <h1>Insert Before</h1>
+        <div id="obj" class="item">
+            <button id="btn1">insert before</button>
+            <button id="btn2">insert after</button>
+        </div>
+        <h1>Insert After</h1>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    var counter = 0;
+    $("#btn1").click(function() {
+        counter++;
+
+        var obj = $("<div>").html(counter).addClass('item');
+
+        obj.insertBefore($("#obj"));
+    });
+
+    $("#btn2").click(function() {
+        counter++;
+
+        var obj = $("<div>").html(counter).addClass('item');
+
+        obj.insertAfter($("#obj"));
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

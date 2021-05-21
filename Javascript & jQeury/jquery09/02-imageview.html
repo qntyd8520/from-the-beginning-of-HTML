@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .clearfix:after {
+        display: block;
+        content: '';
+        float: none;
+        clear: both;
+    }
+
+    /** 목록 박스의 넓이 지정 및 중앙 배치 **/
+    .gallery {
+        width: 700px;
+        margin: auto;
+        border: 5px solid #d5d5d5;
+    }
+
+    /** 각 항목에 대한 가로배열 **/
+    .gallery .item {
+        width: 25%;
+    }
+
+    /** 각항목링크에 대한 크기 지정 **/
+    .gallery .item .model {
+        display: block;
+        margin: 10px;
+        width: auto;
+    }
+
+    /** 이미지에 대한 테두리 제거 및 여백 지정 **/
+    .gallery .item .model img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /** 화면 전체를 덮는 배경 레이어의 위치, 크기, 투명도 지정 > 기본적으로 표시되지 않도록 설정 **/
+    .gray_layer {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.6;
+        display: none;
+    }
+
+    /** 이미지가 표현될 레이어를 화면 중앙에 배치 > 기본적으로 표시되지 않도록 설정 **/
+    .over_layer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        margin-top: -244px;
+        margin-left: -325px;
+        display: none;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 화면에 표시될 원본 보기 영역 -- 기본적으로 숨겨진 상태 -->
+    <div class="gray_layer" id="background"></div>
+    <div class="over_layer" id="front"></div>
+    <!-- 이미지 목록 -->
+    <ul class="gallery clearfix">
+        <li class="item pull-left">
+            <a href="img/photo1.jpg" class="model">
+                <img src="img/photo1_thum.jpg" alt="샹드리아">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo2.jpg" class="model">
+                <img src="img/photo2_thum.jpg" alt="장미">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo3.jpg" class="model">
+                <img src="img/photo3_thum.jpg" alt="바다">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo4.jpg" class="model">
+                <img src="img/photo4_thum.jpg" alt="문">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo5.jpg" class="model">
+                <img src="img/photo5_thum.jpg" alt="바다">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo6.jpg" class="model">
+                <img src="img/photo6_thum.jpg" alt="꽃">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo7.jpg" class="model">
+                <img src="img/photo7_thum.jpg" alt="하늘">
+            </a>
+        </li>
+        <li class="item pull-left">
+            <a href="img/photo8.jpg" class="model">
+                <img src="img/photo8_thum.jpg" alt="건물">
+            </a>
+        </li>
+    </ul>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $(".model").click(function(e) {
+            e.preventDefault();
+            $("#background").fadeIn(200);
+            $("#front").fadeIn(200);
+            var src = $(this).attr("href");
+            var img = "<img src ='" + src + "' />";
+            $("#front").html(img);
+        });
+
+        $("#background").click(function() {
+            $(this).fadeOut(300);
+            $("#front").fadeOut(200);
+        });
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

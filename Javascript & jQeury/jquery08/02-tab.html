@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .clearfix:after {
+        content: '';
+        display: block;
+        clear: both;
+        float: none;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .tab {
+        width: 500px;
+        margin: 20px auto;
+    }
+
+    .tab-button-item {
+        width: 100px;
+        height: 40px;
+    }
+
+    .tab-button-item-link.selected {
+        background: url("img/tab_selected.jpg");
+    }
+
+    .tab-button-item-link {
+        background: url("img/tab.jpg");
+        display: block;
+        color: #222;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .tab-panel {
+        border: 1px solid #9fb7d4;
+        position: relative;
+        top: -1px;
+        padding: 20px 10px;
+    }
+
+    .tab-button {
+        position: relative;
+        z-index: 10;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 탭의 전체 박스 -->
+    <div class="tab">
+        <!-- 탭 버튼 영역 -->
+        <ul class="tab-button clearfix">
+            <li class="tab-button-item pull-left">
+                <a href="#tab-page-1" class="tab-button-item-link selected">HTML5</a>
+            </li>
+            <li class="tab-button-item pull-left">
+                <a href="#tab-page-2" class="tab-button-item-link">jQuery</a>
+            </li>
+            <li class="tab-button-item pull-left">
+                <a href="#tab-page-3" class="tab-button-item-link">BootStrap3</a>
+            </li>
+        </ul>
+        <!-- 내용영역 -->
+        <div class="tab-panel">
+            <div id="tab-page-1">
+                <h3>탭 페이지 1</h3>
+            </div>
+            <div id="tab-page-2" class="hide">
+                <h3>탭 페이지 2</h3>
+            </div>
+            <div id="tab-page-3" class="hide">
+                <h3>탭 페이지 3</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $(".tab-button-item-link").click(function(e) {
+            // 페이지 이동 방지
+            e.preventDefault();
+
+            // 클릭된 요소를 제외한 나머지에게 selected 클래스 제거 --> 배경이미지 원상복구
+            $(".tab-button-item-link").not(this).removeClass('selected')
+
+            $(this).addClass('selected');
+
+            var target = $(this).attr('href');
+            $(target).removeClass('hide');
+            $(".tab-panel > div").not($(target)).addClass('hide');
+        });
+
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>
