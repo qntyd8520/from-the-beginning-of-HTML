@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assetx/js/ie10.js"></script>
+    <!-- [endif]-->
+</head>
+<body>
+	<!--웹 페이지 영역 -->
+	<div class="container">
+		<h1>작게/굵게/기울기</h1>
+		<p>
+			다음과 같이 small태그를 사용하게 되면,
+			<small>이 부분은 좀 더 작은 글자로 표현됩니다.</small>
+			small태그는 <strong>자동으로 줄바꿈이 되지 않는</strong>
+			<em>inline-level요소</em>입니다.
+		</p>
+		
+		<h1>문단 정렬</h1>
+		<p class="text-left">이 문단은 왼쪽 정렬됩니다. (기본값)</p>
+		<p class="text-center">이 문단은 중앙 정렬 됩니다.</p>
+		<p class="text-right">이 문단은 우측 정렬 됩니다.</p>
+		
+		<h1>텍스트 색상 강조</h1>
+		<p>텍스트의 색상을 통하여 중요도에 대한 수준을 표현할 수 있습니다.</p>
+		<p class="text-muted">회색으로 표시되는 비활성 메시지 입니다.</p>
+		<p class="text-primary">밝은 파란색으로 표시되는 중요 메시지 입니다.</p>
+		<p class="text-success">초록색으로 표시되는 성공 메시지 입니다.</p>
+		<p class="text-info">짙은 파란색으로 표시되는 정보 메시지 입니다.</p>
+		<p class="text-warning">노란색으로 표시되는 경고 메시지 입니다.</p>
+		<p class="text-danger">빨간색으로 표시되는 위험 메시지 입니다.</p>
+		<p class="text-center">
+			<strong class="text-danger">색상 강조 관련 클래스</strong>
+			들은 다른 <em class="text-primary">inline-level</em>
+			요소에 적용하여 한문단 안에서 <span class="text-success">여러 색상</span>
+			을 표현할 수 있습니다.
+		</p>
+		
+	</div>
+	
+	<!-- Javascript -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js.bootstrap.min.js"></script>
+</body>
+</html>
