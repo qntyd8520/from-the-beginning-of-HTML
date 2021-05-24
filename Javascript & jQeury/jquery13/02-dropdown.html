@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form id="myform">
+        <div>
+            <label for="subject">과목</label>
+            <select name="subject" id="subject">
+                <option value="">--- 선택하세요 ---</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JAVASCRIPT</option>
+            </select>
+        </div>
+        <button type="submit">입력값 확인</button>
+        <hr>
+        <div id="result"></div>
+    </form>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $("#myform").submit(function(e) {
+            e.preventDefault();
+
+            var subject = $("#subject").val();
+            if (!subject) {
+                alert("과목을 선택하세요.");
+                $("#subject").focus();
+                return false;
+            }
+
+            var subject_index = $("#subject > option:selected").index();
+
+            $("#result").append("<div>과목 : " + subject + "</div>");
+            $("#result").append("<div>선택한 과목의 인덱스 : " + subject_index + "</div>");
+
+        });
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

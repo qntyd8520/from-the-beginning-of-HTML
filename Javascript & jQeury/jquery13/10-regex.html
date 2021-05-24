@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <form id="myform">
+        <div>
+            <label for="username">사용자이름</label>
+            <input type="text" name="username" id="username" placeholder="한글만 입력">
+        </div>
+        <div>
+            <label for="userpass">나이</label>
+            <input type="text" name="age" id="age" placeholder="숫자만 입력">
+        </div>
+        <div>
+            <label for="userapss">아이디</label>
+            <input type="text" name="userid" id="userid" placeholder="영어 + 숫자, 최대 20자">
+        </div>
+        <button type="submit">입력값 확인</button>
+    </form>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $("#myform").submit(function(e) {
+            e.preventDefault();
+
+            // 이름의 한글 입력검사
+            var pattern1 = /^[ㄱ-ㅎ가-힣]*$/;
+            if (!pattern1.test($('#username').val())) {
+                alert("이름은 한글만 입력 가능합니다.");
+                $("#username").val();
+                $("#username").focus();
+                return false;
+            }
+
+            // 나이의 숫자 입력 검사
+            var pattern2 = /^[0-9]*$/;
+            if (!pattern2.test($("#age").val())) {
+                alert("나이는 숫자만 입력 가능합니다.");
+                $("#age").val();
+                $("#age").focus();
+                return false;
+            }
+
+            // 아이디의 영문 + 숫자 검사
+            var pattern3 = /^[a-zA-Z0-9]*$/;
+            if (!pattern3.test($("#userid").val())) {
+                alert("아이디는 영어 + 숫자 조합으로만 입력 가능합니다.");
+                $("#userid").val('');
+                $("#userid").focus();
+                return false;
+            }
+
+            // 아이디의 최대 글자수 검사
+            if ($("#userid").val().length > 20) {
+                alert("아이디는 최대 20자 까지만 입력 가능합니다.");
+                $("#userid").val('');
+                $("#userid").focus();
+                return false;
+            }
+
+            alert("검사완료!!");
+        });
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>
