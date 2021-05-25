@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 플러그인 CSS 참조 -->
+    <link rel="stylesheet" href="../plugins/lightbox/css/lightbox.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.min.css" />
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /** 전체 목록에 대한 스타일 구성 */
+    .list-group {
+        border: 1px solid #eee;
+        border-radius: 3px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* 목록 각 항목에 대한 글자모양, 여백 지정 */
+    .list-group-item {
+        font-family: '나눔고딕', '맑은고딕', 'Helvetica', '굴림';
+        color: #222;
+        text-decoration: none;
+        display: block;
+        padding: 12px 10px 10px 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* 목록의 마지막 요소에 대해서는 아래 테두리 제거 */
+    .list-group-item:last-child {
+        border-bottom: 0;
+    }
+
+    /* 목록 내의 각 텍스트 요소에 대한 여백, 크기 설정 */
+    .list-group-item-heading {
+        padding: 0;
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+
+    .list-group-item-text {
+        padding: 0;
+        margin: 0 0 5px 0;
+        font-size: 12px;
+    }
+
+    .list-group-item-text:last-child {
+        margin-bottom: 0px;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 플러그인에 의하여 동적으로 생성될 내용이 추가될 요소 -->
+    <div class="list-group" id="list"></div>
+    <button id="btn" class="btn btn-primary btn-block">더 보기</button>
+    <!-- 동적으로 생성될 HTML의 기본 틀 -->
+    <!-- 탬플릿으로 사용될 HTML코드는 아래의 script태그 안에서 정의 -->
+    <script type="text/x-handlebars-template" id="list-item-tmpl">
+        <a href="#" class="list-group-item">
+         <h4 class="list-group-item-heading">{{title}}</h4>
+         <p class="list-group-item-text">
+            {{!-- 2중괄호: HTML태그를 실행하지 않음 --}}
+            {{content1}}<br />
+            {{!-- 3중괄호: HTML태그를 실행함 --}}
+            {{{content2}}}
+         </p>
+      </a>
+    </script>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 플러그인 JS 참조 -->
+    <script src="../plugins/lightbox/js/lightbox.min.js"></script>
+    <script src="../plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../plugins/validate/jquery.validate.min.js"></script>
+    <script src="../plugins/validate/additional-methods.min.js"></script>
+    <script src="../plugins/handlebars/handlebars-v4.7.7.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <script type="text/javascript">
+    // 미리 준비한 틀에 출력될 내용을 JSON으로 준비
+    var content = {
+        title: "제목입니다.",
+        content1: "첫 번째 <strong>내용</strong>입니다.",
+        content2: "두 번째 <strong>내용</strong>입니다."
+    };
+
+    $(function() {
+        /** 버튼 클릭 이벤트 **/
+        $("#btn").click(function() {
+            // 미리준비한 HTML 틀을 읽어 온다.
+            var template = Handlebars.compile($("#list-item-tmpl").html());
+            var html = template(content);
+
+            // #list에 읽어온 내용을 추가한다.
+            $("#list").append(html);
+        });
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

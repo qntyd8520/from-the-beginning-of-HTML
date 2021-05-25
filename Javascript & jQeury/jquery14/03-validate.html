@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 플러그인 CSS 참조 -->
+    <link rel="stylesheet" href="../plugins/lightbox/css/lightbox.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.min.css" />
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    /* 폼 전체 박스 */
+    .form-horizontal {
+        border: 5px solid #d5d5d5;
+        width: 500px;
+        margin: auto;
+        padding: 0 10px;
+    }
+
+    /* 입력요소 단위 박스 */
+    .form-group {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #eee;
+    }
+
+    /* 마지막 입력 단위의 border 제거 */
+    .form-group:last-child {
+        border-bottom: 0;
+    }
+
+    /* Float 마감제 */
+    .form-group:after {
+        content: '';
+        display: block;
+        clear: both;
+        float: none;
+    }
+
+    /* <label>에 대한 박스 처리 */
+    .col-md-2 {
+        width: 25%;
+        display: block;
+        float: left;
+        font-size: 14px;
+        padding-top: 7px;
+        text-indent: 5px;
+    }
+
+    /* <input>태그가 배치되는 박스의 처리 */
+    .col-md-10 {
+        width: 75%;
+        display: block;
+        float: left;
+    }
+
+    /* <input>태그 */
+    .form-control {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 14px;
+        border: 1px solid #eee;
+    }
+
+    /* 글자 중앙 정렬 */
+    .text-center {
+        text-align: center;
+    }
+
+    /* 필수항목 표시를 위한 `*` */
+    .identify {
+        font-size: 14px;
+        color: #f00;
+    }
+
+    /* 에러 메시지에 대한 글자 색상 */
+    .error {
+        color: red;
+    }
+
+    /* 에러가 발생한 <input>태그 */
+    input.error {
+        background-color: #ffff00;
+    }
+
+    /* 에러메시지가 표시중인 <label>태그 */
+    label.error {
+        font-size: 10px;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0;
+    }
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- 가입폼 시작 -->
+    <form class="form-horizontal" name="join_form" id="join_form">
+        <div class="form-group">
+            <label for='user_id' class="col-md-2">아이디 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="text" name="user_id" id="user_id" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='user_pw' class="col-md-2">비밀번호 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="password" name="user_pw" id="user_pw" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='user_pw' class="col-md-2">비밀번호 확인 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="password" name="user_pw_re" id="user_pw_re" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='user_name' class="col-md-2">이름 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="text" name="user_name" id="user_name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='email' class="col-md-2">이메일 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="email" name="email" id="email" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='tel' class="col-md-2">연락처 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="tel" name="tel" id="tel" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='birthdate' class="col-md-2">생년월일 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="date" name="birthdate" id="birthdate" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='gender1' class="col-md-2">성별 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <label>
+                    <input type='radio' name='gender' id='gender1' value='M'>남자</label>
+                <label>
+                    <input type='radio' name='gender' id='gender2' value='F'>여자</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='gender1' class="col-md-2">수강과목 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <label>
+                    <input type='checkbox' name='subject' id='subject1' value='html'>HTML</label>
+                <label>
+                    <input type='checkbox' name='subject' id='subject2' value='css'>CSS</label>
+                <label>
+                    <input type='checkbox' name='subject' id='subject3' value='js'>Javascript</label>
+                <label>
+                    <input type='checkbox' name='subject' id='subject4' value='jquery'>jQuery</label>
+                <label>
+                    <input type='checkbox' name='subject' id='subject7' value='php'>PHP</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for='profile_img' class="col-md-2">프로필사진 <span class='identify'>*</span></label>
+            <div class="col-md-10">
+                <input type="file" name="profile_img" id="profile_img" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="text-center">
+                <button type="submit">가입하기</button>
+                <button type="reset">다시작성</button>
+            </div>
+        </div>
+    </form>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 플러그인 JS 참조 -->
+    <script src="../plugins/lightbox/js/lightbox.min.js"></script>
+    <script src="../plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../plugins/validate/jquery.validate.min.js"></script>
+    <script src="../plugins/validate/additional-methods.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+
+        /** 플러그인의 기본 설정 옵션 추가 **/
+        jQuery.validator.setDefaults({
+            onkeyup: false, // 키보드 입력시 검사 안함
+            onclick: false, // <input>태그 클릭시 검사 안함
+            onfocusout: false, // 포커스가 빠져나올 때 검사 안함
+            showErrors: function(errorMap, errorList) { // 에러 발생시 호출되는 함수 재정의
+                // 에러가 있을 때만..
+                if (this.numberOfInvalids()) {
+                    // 0번째 에러 메시지에 대한 javascript 기본 alert 함수 사용
+                    // alert(errorList[0].message);
+                    // 0번째 에러 발생 항목에 포커스 지정
+                    // $(errorList[0].element).focus();
+                    swal({
+                        title: "에러",
+                        text: errorList[0].message,
+                        type: "error"
+                    }).then(function(result) {
+                        // 창이 닫히는 애니메이션의 시간이 있으므로,
+                        // 0.1의 딜레이 적용 후 포커스 이동
+                        setTimeout(function() {
+                            $(errorList[0].element).val('');
+                            $(errorList[0].element).focus();
+                        }, 100);
+                    });
+                }
+            }
+        });
+        /** 유효성 검사 추가 함수 */
+        $.validator.addMethod("kor", function(value, element) {
+            return this.optional(element) || /^[ㄱ-ㅎ가-힣]*$/i.test(value);
+        });
+
+        $.validator.addMethod("phone", function(value, element) {
+            return this.optional(element) || /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/i.test(value) ||
+                /^\d{2,3}\d{3,4}\d{4}$/i.test(value);
+        });
+        /** form태그에 부여한 id속성에 대한 유효성 검사 함수 호출 */
+        $("#join_form").validate({
+            /** 입력검사 규칙 */
+            rules: {
+                // [아이디] 필수 + 알파벳,숫자 조합만 허용
+                user_id: { required: true, alphanumeric: true },
+                // [비밀번호] 필수 + 글자수 길이 제한
+                user_pw: { required: true, minlength: 4, maxlength: 20 },
+                // [비밀번호 확인] 필수 + 특정 항목과 일치 (id로 연결)
+                user_pw_re: { required: true, equalTo: "#user_pw" },
+                // [이름] 필수
+                user_name: { required: true, kor: true },
+                // [이메일] 필수 + 이메일 형식 일치 필요
+                email: { required: true, email: true },
+                // [연락처] 필수
+                tel: { required: true, phone: true },
+                // [생년월일] 필수 + 날짜 형식 일치 필요
+                birthdate: { required: true, date: true },
+                // [성별] 필수 입력,
+                gender: "required",
+                // [수강과목] 필수, 최소2개, 최대4개
+                subject: { required: true, minlength: 2, maxlength: 4 },
+                // 허용할 확장자 명시
+                profile_img: { extension: "jpg|gif|png" }
+            },
+            /** 규칙이 맞지 않을 경우의 메시지 */
+            messages: {
+                user_id: {
+                    required: "아이디를 입력하세요.",
+                    alphanumeric: "아이디는 영어,숫자만 입력 가능합니다."
+                },
+                user_pw: {
+                    required: "비밀번호를 입력하세요.",
+                    minlength: "비밀번호는 4글자 이상 입력하셔야 합니다.",
+                    maxlength: "비밀번호는 최대 20자까지 가능합니다."
+                },
+                user_pw_re: {
+                    required: "비밀번호 확인값을 입력하세요.",
+                    equalTo: "비밀번호 확인이 잘못되었습니다."
+                },
+                user_name: {
+                    required: "이름을 입력하세요.",
+                    kor: "이름은 한글만 입력 가능합니다."
+                },
+                email: {
+                    required: "이메일을 입력하세요.",
+                    email: "이메일 형식이 잘못되었습니다."
+                },
+                tel: {
+                    required: "연락처를 입력하세요.",
+                    phone: "연락처 형식이 잘못되었습니다."
+                },
+                birthdate: {
+                    required: "생년월일을 입력하세요.",
+                    date: "생년월일의 형식이 잘못되었습니다."
+                },
+                gender: "성별을 선택해 주세요.",
+                subject: {
+                    required: "수강과목을 선택하세요",
+                    minlength: "수강과목은 최소 2개 이상 선택하셔야 합니다.",
+                    maxlength: "수강과목은 최대 4개 까지 선택 가능합니다."
+                },
+                profile_img: {
+                    extension: "프로필 사진은 jpg,png,gif 형식만 가능합니다."
+                }
+            }
+        }); // end validate()
+    })
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

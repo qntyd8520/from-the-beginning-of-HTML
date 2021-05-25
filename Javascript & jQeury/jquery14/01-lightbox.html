@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 플러그인 CSS 참조 -->
+    <link rel="stylesheet" href="../plugins/lightbox/css/lightbox.min.css" />
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <h1>Single</h1>
+    <div>
+        <!-- data-lightbox의 값이 모든 링크마다서로 다를 경우 개별적으로 동작함. -->
+        <a href="img/photo1.jpg" data-lightbox="myphoto-1" data-title="내 첫 번째 사진">
+            <img src="img/photo1.jpg" width="100" height="70" />
+        </a>
+        <a href="img/photo2.jpg" data-lightbox="myphoto-2" data-title="내 두 번째 사진">
+            <img src="img/photo2.jpg" width="100" height="70" />
+        </a>
+        <a href="img/photo3.jpg" data-lightbox="myphoto-3" data-title="내 세 번째 사진">
+            <img src="img/photo3.jpg" width="100" height="70" />
+        </a>
+    </div>
+    <h1>Multi</h1>
+    <div>
+        <!-- data-lightbox의 값이 모든 링크가 동일할 경우 하나의 갤러리로 동작함. -->
+        <a href="img/bg1.jpg" data-lightbox="my-gallery" data-title="내 첫 번째 갤러리">
+            <img src="img/bg1.jpg" width="100" height="70" />
+        </a>
+        <a href="img/bg2.jpg" data-lightbox="my-gallery" data-title="내 두 번째 갤러리">
+            <img src="img/bg2.jpg" width="100" height="70" />
+        </a>
+        <a href="img/bg3.jpg" data-lightbox="my-gallery" data-title="내 세 번째 갤러리">
+            <img src="img/bg3.jpg" width="100" height="70" />
+        </a>
+        <a href="img/bg4.jpg" data-lightbox="my-gallery" data-title="내 네 번째 갤러리">
+            <img src="img/bg4.jpg" width="100" height="70" />
+        </a>
+        <a href="img/bg5.jpg" data-lightbox="my-gallery" data-title="내 다섯 번째 갤러리">
+            <img src="img/bg5.jpg" width="100" height="70" />
+        </a>
+        <a href="img/bg6.jpg" data-lightbox="my-gallery" data-title="내 여섯 번째 갤러리">
+            <img src="img/bg6.jpg" width="100" height="70" />
+        </a>
+    </div>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 플러그인 JS 참조 -->
+    <script src="../plugins/lightbox/js/lightbox.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

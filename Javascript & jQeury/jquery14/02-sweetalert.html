@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 플러그인 CSS 참조 -->
+    <link rel="stylesheet" href="../plugins/lightbox/css/lightbox.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.min.css" />
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <button id="btn1" type="button">button1</button>
+    <button id="btn2" type="button">button2</button>
+    <button id="btn3" type="button">button3</button>
+    <button id="btn4" type="button">button4</button>
+    <button id="btn5" type="button">button5</button>
+    <button id="btn6" type="button">button6</button>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 플러그인 JS 참조 -->
+    <script src="../plugins/lightbox/js/lightbox.min.js"></script>
+    <script src="../plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    $(function() {
+        $("#btn1").click(function() {
+            // 메시지 내용만 적용하여 확인창 표시
+            swal("안녕하세요.");
+        });
+
+        $("#btn2").click(function() {
+            // 메시지 제목, 내용, 종류
+            // 종류 --> 'success', 'warning', 'info', 'question', 'error'
+            swal('탈퇴확인', '정말 탈퇴하시겠습니까?', 'question');
+        });
+
+        $("#btn3").click(function() {
+            // 옵션 지정하여 메시지 창 표시
+            swal({
+                title: '<font color="red">에러</font>', // 제목
+                html: '요청하신 처리에 실패했습니다.<br/>관리자에게 문의 바랍니다.', // 내용
+                type: 'error', // 종류
+                showCloseButton: true, // 닫기 버튼 표시 여부
+                confirmButtonText: '확인', // 확인버튼 표시 문구
+                confirmButtonColor: '#a00', // 확인버튼 색상
+                showCancelButton: true, // 취소버튼 표시 여부
+                cancelButtonText: '취소', // 취소버튼 표시 문구
+                cancelButtonColor: '#f60' // 취소버튼 색상
+            });
+        });
+
+        $("#btn4").click(function() {
+            // 확인, 취소버튼에 따른 후속 처리 구현
+            swal({
+                title: '확인', // 제목
+                text: "정말 선택하신 항목을 삭제하시겠습니까?", // 내용
+                type: 'warning', // 종류
+                confirmButtonText: 'Yes', // 확인버튼 표시 문구
+                showCancelButton: true, // 취소버튼 표시 여부
+                cancelButtonText: 'No', // 취소버튼 표시 문구
+            }).then(function(result) { // 버튼이 눌러졌을 경우의 콜백 연결
+                if (result.value) { // 확인 버튼이 눌러진 경우
+                    swal('삭제', '성공적으로 삭제되었습니다.', 'success');
+                } else if (result.dismiss === 'cancel') { // 취소버튼이 눌러진 경우
+                    swal('취소', '삭제가 취소되었습니다.', 'error');
+                }
+            });
+        });
+
+        $("#btn5").click(function() {
+            // 이미지 표시 --> 종류(type)를 지정할 수 없음
+            swal({
+                title: 'Thank you!', // 제목
+                text: '성원에 감사드립니다.', // 내용
+                imageUrl: 'img/bg6.jpg', // 이미지 경로
+                imageWidth: 480, // 이미지 가로 크기
+                imageHeight: 240, // 이미지 세로 크기
+                animation: false // 팝업창 표시 애니메이션 사용 안함
+            });
+        });
+
+        $("#btn6").click(function() {
+            // 배경 지정
+            swal({
+                title: '<span class="title">Thank you!</span>', // 제목(CSS클래스 지정)
+                html: '<span class="content">성원에 감사드립니다.</span>', // 내용 (CSS클래스 지정)
+                width: 600, // 팝업 가로 크기 (세로는 내용에 맞게 지정됨)
+                padding: '100px', // 팝업 여백 (CSS표현방법 모두 적용 가능)
+                background: '#fff url(img/bg6.jpg) center center/cover no-repeat' // 배경설정
+            });
+        });
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>

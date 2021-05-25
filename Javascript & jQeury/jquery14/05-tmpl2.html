@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 페이지 설정 부분 -->
+
+<head>
+    <!-- 저장시에 사용된 인코딩(파일의 저장 형식) 값을 웹 브라우저에게 알려준다.
+              -ANSI(euc-kr), UTF-8 -->
+    <meta charset="utf-8" />
+    <!-- IE의  호환성 보기 모드 금지 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 스마트 장치에서의 해상도 균일화 처리 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <!-- 호환성 보기 금지하고 지원하는 가장 최신버전의 방식으로 HTML페이지 표시 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 브라우저에 표시될 문서 제목 -->
+    <title>jQuery</title>
+    <!-- 플러그인 CSS 참조 -->
+    <link rel="stylesheet" href="../plugins/lightbox/css/lightbox.min.css" />
+    <link rel="stylesheet" href="../plugins/sweetalert/sweetalert2.min.css" />
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<!-- 브라우저에 보여질 부분 -->
+
+<body>
+    <!-- JSON과 content-tmpl의 조합이 출력될 곳 -->
+    <div id="target"></div>
+    <!-- 동적으로 생성될 HTML의 기본 틀 -->
+    <!-- 탬플릿으로 사용될 HTML코드는 아래의 script태그 안에서 정의 -->
+    <script type="text/x-handlebars-template" id="content-tmpl">
+        <h2>이름: {{name}}</h2>
+      <p>나이: {{age}}</p>
+      <p>연락처: {{tel}}</p>
+      <p>성별: {{converGender gender}}</p>
+      <p>주소: {{address.postcode}} {{address.header}} {{address.footer}}</p>
+    </script>
+    <!-- Javascript Start -->
+    <!-- jQeury 사용 -->
+    <script src="../jquery-3.6.0.min.js"></script>
+    <!-- 플러그인 JS 참조 -->
+    <script src="../plugins/lightbox/js/lightbox.min.js"></script>
+    <script src="../plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../plugins/validate/jquery.validate.min.js"></script>
+    <script src="../plugins/validate/additional-methods.min.js"></script>
+    <script src="../plugins/handlebars/handlebars-v4.7.7.js"></script>
+    <!-- HTML 페이지에 Javascript를 포함시키기 위해서는 <script>태그 블록 사용 -->
+    <!-- 외부 js파일을 명시할때는 type 뒤에 src="경로파일" -->
+    <script type="text/javascript">
+    /** handelbars 플러그인 안에 converGender라는 함수를 추가하기 **/
+    Handlebars.registerHelper("converGender", function(g) {
+        if (g == "M") {
+            return "남자";
+        } else {
+            return "여자";
+        }
+    });
+    // 미리 준비한 틀에 출력될 내용을 JSON으로 준비
+    var content = {
+        name: "jQuery 학생",
+        age: 19,
+        tel: "010-1234-1234",
+        gender: "M",
+        address: {
+            header: "서울시 강남구 역삼동",
+            footer: "123-12번지",
+            postcode: "12345"
+        }
+    };
+
+    $(function() {
+        // 미리 준비한 HTMl틀을 읽어온다.
+        var template = Handlebars.compile($("#content-tmpl").html());
+        var html = template(content);
+        // #target에 읽어온 내용을 추가한다.
+        $("#target").append(html);
+    });
+    </script>
+    <!-- Javascript end -->
+</body>
+
+</html>
