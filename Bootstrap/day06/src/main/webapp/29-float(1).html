@@ -29,42 +29,29 @@
     <!-- [endif]-->
     <!-- 스타일 시트 -->
     <style type="text/css">
+    .box {
+        width: 200px;
+        height: 200px;
+        border: 5px solid #3071a9;
+        padding: 10px;
+    }
+
+
+    .gray {
+        background: #ccc;
+    }
+
+    .pink {
+        background: #f0f;
+    }
     </style>
 </head>
 
 <body>
     <!--웹 페이지 영역 -->
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th class="text-center">#</th>
-                    <th class="text-center">강의명</th>
-                    <th class="text-center">강의기간</th>
-                    <th class="text-center">강사</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="text-center">1</td>
-                    <td>HTML5와 CSS3 기반의 모바일 반응형 웹 퍼블리싱</td>
-                    <td class="text-center">13/13/01~13/10/15</td>
-                    <td class="text-center">주영아</td>
-                </tr>
-                <tr>
-                    <td class="text-center">2</td>
-                    <td>Javascript + jQuery + Ajax 완벽가이드</td>
-                    <td class="text-center">13/11/01~13/11/15</td>
-                    <td class="text-center">주영아</td>
-                </tr>
-                <tr>
-                    <td class="text-center">3</td>
-                    <td>Sencha Touch2 기반의 모바일 웹앱 만들기</td>
-                    <td class="text-center">13/12/01~13/12/15</td>
-                    <td class="text-center">이광호</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="container gray">
+        <div class="box pink pull-right">BOX1</div>
+        <p>Twitter Bootstrap3는 손쉽게 반응형 웹 페이지를 제작할 수 있게 도와주는 CSS Framework 입니다.</p>
     </div>
     <!-- Javascript -->
     <script src="assets/js/jquery.min.js"></script>
