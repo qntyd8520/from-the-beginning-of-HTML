@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assetx/js/ie10.js"></script>
+    <!-- [endif]-->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+<body>
+	<!--웹 페이지 영역 -->
+	<div class="container">
+		<form class="form-horizontal" role="form">
+			<fieldset>
+				<legend>체크박스 / 라디오</legend>
+				
+				<!-- 체크박스 -->
+				<div class="form-group">
+					<label for="checkbox1" class="col-md-2 control-label">
+						이메일 알림 받음
+					</label>
+					<div class="col-md-10">
+						<div class="checkbox">
+							<label>
+								<input id="checkbox1" type="checkbox" value="">
+								우리 사이트의 새로운 소식을 이메일로 받아 보곗습니다.
+							</label>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 라디오 -->
+				<div class="form-group">
+					<label for="optionsRadios1" class="col-md-2 control-label">
+						이메일 알림 받음
+					</label>
+					<div class="col-md-10">
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionRadios" id="optionsRadios1" value="option1" checked="checked">
+								우리 사이트의 새로운 소식을 이메일로 받아보곘습니다.
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="optionRadios" id="optionsRadios2" value="option2">
+								이메일 소식지를 받지 않겠습니다.
+							</label>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 가로배치 -->
+				<div class="form-group">
+					<label for="optionRadios1" class="col-md-2 control-label">
+					취미를 선택하세요.
+					</label>
+					<div class="col-md-10">
+						<label class="checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox1" value="option1">
+							 축구 
+						</label>
+						<label class="checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox2" value="option2">
+							 농구 
+						</label>
+						<label class="checkbox-inline">
+							<input type="checkbox" id="inlineCheckbox3" value="option3">
+							 야구 
+						</label>
+					</div>
+				</div>
+				
+				<!-- 가로배치 -->
+				<div class="form-group">
+					<label for="gender1" class="col-md-2 control-label">
+					성별을 선택하세요.
+					</label>
+					<div class="col-md-10">
+						<label class="radio-inline">
+							<input type="radio" name="gender" id="gender1" value="M" checked="checked">
+							 남자
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="gender" id="gender2" value="F">
+							 여자
+						</label>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<!-- Javascript -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js.bootstrap.min.js"></script>
+</body>
+</html>

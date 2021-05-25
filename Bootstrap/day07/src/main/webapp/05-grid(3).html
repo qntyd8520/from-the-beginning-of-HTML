@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assetx/js/ie10.js"></script>
+    <!-- [endif]-->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+    <link type="text/css" rel="stylesheet" href="assets/css/grid.css" />
+    
+</head>
+<body>
+	<!--웹 페이지 영역 -->
+	<div class="container">
+	<h1>핸드폰에서 행 간의 여백 생성하기</h1>
+	<div class="row box">
+		<!-- xs 해상도에서 한 칸이 6이므로, 두 줄로 표시된다. -->
+		<!-- sm 이상 해상도에서 3으로 적용되므로, 한 줄에 25%씩 표시된다. -->
+		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		
+		<!-- 핸드폰 UI에서 만 표시되기 위해서 cisible-xs 적용, 여백을 위해서 space 클래스 적용,
+			 윗줄 grid의 float를 해제하기 위해서 clearfix 적용 -->
+		<div class="clearfix visible-xs space"></div>
+		
+		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>		
+	</div>
+	</div>
+	
+	<!-- Javascript -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js.bootstrap.min.js"></script>
+</body>
+</html>
