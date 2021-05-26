@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assets/js/ie10.js"></script>
+    <!-- [endif]-->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <!--웹 페이지 영역 -->
+    <div class="container">
+        <h1>메뉴 기본</h1>
+        <!-- 메뉴바 -->
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- 로고 -->
+            <div class="navbar-header">
+                <!-- 반응형 메뉴 구현 기능 추가 -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnb">
+                    <span class="sr-only">메뉴열기</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- // 반응형 메뉴 구현 기능 추가 끝 -->
+                <a href="#" class="navbar-brand">ITPaper</a>
+            </div>
+            <!-- 메뉴 항목 -->
+            <div class="collapse navbar-collapse" id="gnb">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">HTML5</a>
+                    </li>
+                    <li>
+                        <a href="#">Bootstrap3</a>
+                    </li>
+                    <!-- 여기가 드롭다운 입니다. -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Javascript<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">jQuery</a>
+                            </li>
+                            <li>
+                                <a href="#">Ajax</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- 메뉴바 안에서의 문단은 <p>태그에 navbar-text클래스를 적용해야 합니다. (중요!!!) 메뉴바 안에서 pull-left 나 pull-right대신, navbar-left, navbar-right를 사용해야합니다. -->
+                <p class="navbar-text navbar-right">
+                    <span class="text-success">
+                        웹 페이지에 날개를 달아 드립니다.
+                    </span>자세한 사항은
+                    <!-- 일반 링크에는 navbar-link클래슬 추가해야 합니다. -->
+                    <a href="#" class="navbar-link">여기</a>를 클릭하세요.
+                </p>
+            </div>
+        </nav>
+        <!-- // 메뉴바 끝 -->
+    </div>
+    <!-- Javascript -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
