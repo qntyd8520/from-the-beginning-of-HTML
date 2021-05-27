@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assets/js/ie10.js"></script>
+    <!-- [endif]-->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <!--웹 페이지 영역 -->
+    <div class="container">
+        <div class="page-header">
+            <h1>덧글목록</h1>
+        </div>
+        <!-- 웹진 박스를 목록으로 구성하기 위한 구조 입니다. -->
+        <ul class="media-list">
+            <!-- 목록의 개별 항목이 웹진 박스로 구성됩니다. -->
+            <li class="media">
+                <a href="#" class="pull-left">
+                    <img src="img/img1.jpg" class="media-object" width="60" height="60" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <!-- 제목영역의 float 처리를 위한 마감제 박스  -->
+                    <div class="clearfix">
+                        <!-- 제목에 float: left 적용 == pull-left -->
+                        <h4 class="media-heading pull-left">주영아 <small>2021-05-27 10:41:35</small></h4>
+                        <!-- 게목에 float: right 적용 == pull-right -->
+                        <div class="pull-right">
+                            <a href="#" title="수정">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a href="#" title="삭제">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Twitter Bootstrap 정말 좋은 것 같습니다. 이 전에는 힘들게 하던 잡업들이 너무 간결해 졌어요.</p>
+                </div>
+            </li>
+            <!-- 목록의 개별 항목이 웹진 박스로 구성됩니다. -->
+            <li class="media">
+                <a href="#" class="pull-left">
+                    <img src="img/img2.jpg" class="media-object" width="60" height="60" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <!-- 제목영역의 float 처리를 위한 마감제 박스  -->
+                    <div class="clearfix">
+                        <!-- 제목에 float: left 적용 == pull-left -->
+                        <h4 class="media-heading pull-left">이광호 <small>2021-05-27 10:46:44</small></h4>
+                        <!-- 게목에 float: right 적용 == pull-right -->
+                        <div class="pull-right">
+                            <a href="#" title="수정">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a href="#" title="삭제">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>jQuery까지 내장되어 있기 때문에, jQuery와 함께 사용한 다면 더 강력한 기능을 만들 수 있습니다. 이제 복잡한 웹 코딩을 할 필요가 없어요.</p>
+                </div>
+            </li>
+            <!-- 목록의 개별 항목이 웹진 박스로 구성됩니다. -->
+            <li class="media">
+                <a href="#" class="pull-left">
+                    <img src="img/img3.jpg" class="media-object" width="60" height="60" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <!-- 제목영역의 float 처리를 위한 마감제 박스  -->
+                    <div class="clearfix">
+                        <!-- 제목에 float: left 적용 == pull-left -->
+                        <h4 class="media-heading pull-left">홍길동 <small>2021-05-27 12:12:12</small></h4>
+                        <!-- 게목에 float: right 적용 == pull-right -->
+                        <div class="pull-right">
+                            <a href="#" title="수정">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a href="#" title="삭제">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>그런가요? 좋은 정보 감사합니다. 한번 써 봐야 겠네요~</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Javascript -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+            minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Hello Bootstrap3</title>
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <!-- 나눔고딕 웹 폰트 적용 -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nanumfont.css" />
+    <!-- 반응형 웹을 지원하지 않을 경우 -->
+    <!-- <link rel="stylesheet" href="assets/css/non-responsive.css" /-->
+    <!-- IE8 이하 버전 지원 -->
+    <!-- [if lt IE 9] -->
+    <script type="text/javascript" src="assets/js/html5shiv.js"></script>
+    <script type="text/javascript" src="assets/js/respond.min.js"></script>
+    <!-- [endif] -->
+    <!-- IE10 반응형 웹 버그 보안 -->
+    <!-- [if gt IE 9] -->
+    <link rel="stylesheet" type="text/css" href="assets/css/ie10.css" />
+    <script type="text/javascript" src="assets/js/ie10.js"></script>
+    <!-- [endif]-->
+    <!-- 스타일 시트 -->
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <!--웹 페이지 영역 -->
+    <div class="container">
+        <h1>페이지 번호 표시 (상태표시)</h1>
+        <ul class="pagination">
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <!-- 활성화 버튼은 아래의 구조로 구성하면 된다. sr-only는 스크린리더 전용 -->
+            <li class="active">
+                <span>1
+                    <span class="sr-only">(current)</span>
+                </span>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+        <h1>페이지 번호 표시 (크게)</h1>
+        <!-- pagination-lg 클래스는 크게 만들어 줍니다. Lg사이즈 -->
+        <ul class="pagination pagination-lg">
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <!-- 활성화 버튼은 아래의 구조로 구성하면 된다. sr-only는 스크린리더 전용 -->
+            <li class="active">
+                <span>1
+                    <span class="sr-only">(current)</span>
+                </span>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+        <h1>페이지 번호 표시 (작게)</h1>
+        <!-- pagination-sm 클래스는 작게 만들어 줍니다. Sm사이즈 -->
+        <ul class="pagination pagination-sm">
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <!-- 활성화 버튼은 아래의 구조로 구성하면 된다. sr-only는 스크린리더 전용 -->
+            <li class="active">
+                <span>1
+                    <span class="sr-only">(current)</span>
+                </span>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+        <h1>이전 / 다음 표시 (기본)</h1>
+        <ul class="pager">
+            <li>
+                <a href="#">Previous</a>
+            </li>
+            <li>
+                <a href="#">Next</a>
+            </li>
+        </ul>
+        <h1>페이지 번호 표시 (상태변경)</h1>
+        <!-- li태그에 previous 클래스와 next클래스를 배치하면 화면 양쪽으로 펼쳐진다. -->
+        <ul class="pager">
+            <li class="previous disabled">
+                <a href="#">&larr; Older</a>
+            </li>
+            <li class="next">
+                <a href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Javascript -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
