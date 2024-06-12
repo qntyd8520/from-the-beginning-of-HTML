@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta charset="UTF-8">
+    <meta content="G.W.W" property="og:title" />
+    <meta content="website" property="og:type" />
+    <title>데이터속성 테스트</title>
+    <script type="text/javascript">
+
+        // 폼 데이터 검사 요청
+        const dataValidation = (formId) => {
+            const $sFrm = document.querySelectorAll(formId);
+            let isInvalid = false;
+            $sFrm.forEach((frm) => {
+                if (isInvalid) return;
+                const $input = frm.querySelectorAll('[data-validation]');
+                isInvalid = Array.from($input).some((input) => {
+                    if (!validateInput(input)) {
+                        return true;
+                    }
+                    console.log("");
+                    return false;
+                });
+            });
+            return !isInvalid;
+        }
+
+        // input 데이터 검사
+        const validateInput = (input) => {
+            const $inputName = input.getAttribute('name');
+            const $inputId = input.getAttribute('id');
+            const $inputValue = input.value;
+            const $inputValidation = input.getAttribute('data-validation');
+            const $inputValidationObj = JSON.parse($inputValidation);
+
+            console.log(`inputName: ${$inputName}, inputValue: ${$inputValue}, inputValidationObj: `, $inputValidationObj);
+
+            // 필수면
+            if ($inputValidationObj?.required?.isReq === "true") {
+                console.log(`this input isReq: ${$inputValidationObj.required.isReq}, input id: ${$inputId}`);
+
+                // 라디오, 체크박스 검사
+                if (input.type === "radio" || input.type === "checkbox") {
+                    // 라디오 체크여부
+                    if (input.type === "radio") {
+                        const radios = document.querySelectorAll(`input[name=${$inputName}]`);
+                        let radioCheck = false;
+                        radios.forEach((radio) => {
+                            if (radio.checked) {
+                                radioCheck = true;
+                            }
+                        });
+                        if (!radioCheck) {
+                            errorAlert($inputValidationObj.required.reqMsg);
+                            document.getElementById($inputId).focus();
+                            return false;
+                        }
+                    } // 체크박스 체크여부
+                    else if (input.type === "checkbox") {
+                        const checkboxs = document.querySelectorAll(`input[name=${$inputName}]:checked`);
+                        if (checkboxs.length === 0) {
+                            errorAlert($inputValidationObj.required.reqMsg);
+                            document.getElementById($inputId).focus();
+                            return false;
+                        }
+                    }
+                } else {
+                    // 필수인데 값이 없으면
+                    if ($inputValue == null || !$inputValue.trim().length) {
+                        errorAlert($inputValidationObj.required.reqMsg);
+                        document.getElementById($inputId).focus();
+                        return false;
+
+                    }  // 필수인데 값이 있으면
+                    else {
+                        // 형식검사 호출
+                        const result = validationRegx($inputValidationObj, $inputId, $inputValue);
+                        if (result !== true) {
+                            // 형식검사 에러시 alert
+                            errorAlert(result.msg); // 에러메시지 i
+                            document.getElementById(result.targetId).focus(); // 에러발생한 input으로 포커스
+                            return false;
+                        }
+                    }
+                }
+            } // 필수가 아니면
+            else {
+                // 필수가 아닌데 값이 있으면
+                if ($inputValue != null && $inputValue.trim().length) {
+                    // 형식검사 호출
+                    const result = validationRegx($inputValidationObj, $inputId, $inputValue);
+                    if (result !== true) {
+                        // 형식검사 에러시 alert
+                        errorAlert(result.msg); // 에러메시지 i
+                        document.getElementById(result.targetId).focus(); // 에러발생한 input으로 포커스
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+
+        // 형식검사부 통합 함수
+        const validationRegx = ($inputValidationObj, $inputId, $inputValue) => {
+            let result = true;
+            let msg = null;
+            let targetId = null;
+
+            // 이메일 형식검사
+            if ($inputValidationObj.email?.isEmail === "true") {
+                const emailRegx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegx.test($inputValue)) {
+                    result = false;
+                    msg = $inputValidationObj.email.emailMsg;
+                    targetId = $inputId;
+                    return { result, msg, targetId };
+                }
+            } // 비밀번호 형식검사
+            else if ($inputValidationObj.password?.isPassword === "true") {
+                const passwordRegx = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/;
+                if (!passwordRegx.test($inputValue)) {
+                    result = false;
+                    msg = $inputValidationObj.password.passwordMsg;
+                    targetId = $inputId;
+                    return { result, msg, targetId };
+                }
+            } // 파일이 이미지인지 검사
+            else if ($inputValidationObj.file?.isImgFile === "true") {
+                const fileRegx = /\.(gif|jpg|jpeg|tiff|png)$/i;
+                if (!fileRegx.test($inputValue)) {
+                    result = false;
+                    msg = $inputValidationObj.file.fileMsg;
+                    targetId = $inputId;
+                    return { result, msg, targetId };
+                }
+            }
+            return true;
+        }
+
+        // error alert
+        const errorAlert = (msg) => {
+            alert(msg);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form id="sFrm">
+            <!-- 노멀한 필수 text div-->
+            <div class="nomalText">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name"
+                    data-validation='{"required" : {"isReq" : "true", "reqMsg" : "이름은 필수!"}}'>
+            </div>
+
+            <!-- 필수 이메일 div-->
+            <div class="reqEmailRegx">
+                <label for="email">이메일</label>
+                <input type="text" id="email" name="email" data-validation='{"required" : {"isReq" : "true", "reqMsg" : "이메일은 필수~"}, 
+                    "email" : {"isEmail" : "true", "emailMsg" : "이메일 형식이 아닙니다."}}'>
+            </div>
+
+            <!-- 필수는 아닌 이메일 div-->
+            <div class="notReqEmailRegx">
+                <label for="email">이메일</label>
+                <input type="text" id="notReqEmail" name="notReqEmail"
+                    data-validation='{"email" : {"isEmail" : "true", "emailMsg" : "이메일 형식이 아닙니다."}}'>
+            </div>
+
+            <!-- 노멀한 필수 비밀번호 div-->
+            <div class="nomalPassword">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" data-validation='{"required" : {"isReq" : "true", "reqMsg" : "비번은 필수~"},
+                "password" : {"isPassword" : "true", "passwordMsg" : "비밀번호 형식이 아닙니다."}}'>
+            </div>
+
+            <!-- 필수 input radio-->
+            <div class="reqRadio">
+                <label> 남자
+                    <input type="radio" name="gender" value="male" id="genderMale"
+                        data-validation='{"required" : {"isReq" : "true", "reqMsg" : "성별 선택은 필수!"}}'>
+                </label>
+                <label> 여자
+                    <input type="radio" name="gender" value="female" id="genderFemale">
+                </label>
+            </div>
+
+            <!-- 필수 select box-->
+            <div class="reqSelect">
+                <label for="difficulty">난이도</label>
+                <select name="difficulty" id="difficulty"
+                    data-validation='{"required" : {"isReq" : "true", "reqMsg" : "난이도 선택은 필수!"}}'>
+                    <option value="">난이도 선택</option>
+                    <option value="easy">쉬움</option>
+                    <option value="medium">중간</option>
+                    <option value="hard">어려움</option>
+                </select>
+            </div>
+
+            <!-- 필수 checkbox-->
+            <div class="reqCheckbox">
+                <label> 체크박스 1
+                    <input type="checkbox" name="checkbox" id="checkbox1"
+                        data-validation='{"required" : {"isReq" : "true", "reqMsg" : "체크박스 선택은 필수!"}}'>
+                </label>
+                <label> 체크박스 2
+                    <input type="checkbox" name="checkbox" id="checkbox2">
+                </label>
+                <label> 체크박스 3
+                    <input type="checkbox" name="checkbox" id="checkbox3">
+                </label>
+            </div>
+
+            <!-- 필수 file-->
+            <div class="reqFile">
+                <label for="file">파일</label>
+                <input type="file" name="file" id="reqFile"
+                    data-validation='{"required" : {"isReq" : "true", "reqMsg" : "파일 선택은 필수!"}}'>
+            </div>
+
+            <!-- 필수 file 이미지만-->
+            <div class="reqFileImage">
+                <label for="file">이미지파일</label>
+                <input type="file" name="imgFile" id="reqImgFile"
+                    data-validation='{"required" : {"isReq" : "true", "reqMsg" : "파일 선택은 필수!"}, "file" : {"isImgFile" : "true", "fileMsg" : "이미지 파일만 가능합니다."}}'>
+            </div>
+        </form>
+    </div>
+</body>
